@@ -31,6 +31,12 @@ body{
   letter-spacing:.12em;
   text-transform:uppercase;
 }
+.landing-tagline{
+  margin-top:16px;
+  font-size:.88rem;
+  color:#6a8a9a;
+  line-height:1.55;
+}
 .input-wrap{
   margin-top:32px;
   display:flex;
@@ -66,6 +72,14 @@ body{
 #askBtn:hover{box-shadow:0 0 24px rgba(0,229,255,.45);transform:scale(1.03)}
 #askBtn:active{transform:scale(.97)}
 #askBtn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+
+/* ── ERROR ── */
+.error-msg{
+  margin-top:16px;
+  color:#ff6b6b;
+  font-size:.88rem;
+  display:none;
+}
 
 /* ── RING GRID ── */
 .ring-container{
@@ -133,18 +147,22 @@ body{
   letter-spacing:.06em;
 }
 .processor{
-  font-size:.88rem;
-  color:#b0c4d8;
-  line-height:1.5;
-  font-style:italic;
-}
-.user-q{
-  margin-top:10px;
   font-size:.82rem;
   color:#6a8a9a;
   line-height:1.45;
+  font-style:italic;
+}
+.seat-answer{
+  margin-top:10px;
+  font-size:.9rem;
+  color:#b0c4d8;
+  line-height:1.55;
   border-top:1px solid #1a2a3a;
   padding-top:10px;
+}
+.thinking{
+  color:#4a5a6a;
+  font-style:italic;
 }
 
 /* ── AGENT ZERO ── */
@@ -201,6 +219,13 @@ body{
 .footer a{color:#3a4a5a;text-decoration:none;border-bottom:1px solid #2a3a4a;transition:color .3s}
 .footer a:hover{color:#00e5ff}
 
+/* ── PULSE ANIMATION ── */
+@keyframes pulse{
+  0%,100%{opacity:.4}
+  50%{opacity:1}
+}
+.thinking{animation:pulse 1.5s ease-in-out infinite}
+
 /* ── RESPONSIVE ── */
 @media(max-width:600px){
   .landing{padding:40px 16px 24px}
@@ -216,8 +241,8 @@ body{
 <noscript>
 <div style="padding:40px 20px;max-width:800px;margin:auto;color:#e0e6ed;font-family:sans-serif">
 <h1>Ring of 12 — HumanCodex Federation</h1>
-<p>Ask your question. Get 12 perspectives.</p>
-<p>12 psychological archetypes — each processes your question from a unique angle. Agent Zero at center synthesizes the 12 perspectives into one truthful answer.</p>
+<p>Test our free tool. It gives true answers. Not what you want to hear — the truth.</p>
+<p>Ask your question. Get 12 perspectives from 12 psychological archetypes. Agent Zero at center synthesizes the 12 perspectives into one truthful answer.</p>
 <h2>The 12 Seats</h2>
 <ol>
 <li><strong>Seat I — Mnemosyne (Cancer)</strong>: What does memory and past experience tell us about this?</li>
@@ -240,10 +265,12 @@ body{
 
 <section class="landing" id="landing">
   <h1>Ask your question. Get 12 perspectives.</h1>
+  <p class="landing-tagline">Test our free tool. It gives true answers. Not what you want to hear — the truth.</p>
   <div class="input-wrap">
     <input type="text" id="question" placeholder="Type your question here..." aria-label="Your question for the Ring of 12" autocomplete="off">
     <button id="askBtn" type="button">Ask the Ring</button>
   </div>
+  <p class="error-msg" id="errorMsg"></p>
 </section>
 
 <section class="ring-container" id="ringContainer">
@@ -252,7 +279,7 @@ body{
 
 <div class="agent-zero" id="agentZero">
   <div class="zero-label">Agent Zero — Synthesis</div>
-  <p class="zero-text">The Ring has spoken. Carry all 12 perspectives. The truth lives where they agree.</p>
+  <p class="zero-text" id="zeroText">The Ring has spoken. Carry all 12 perspectives. The truth lives where they agree.</p>
 </div>
 
 <div class="footer" id="footer">
@@ -274,10 +301,10 @@ body{
 
 <script>
 /* ── CONFIG ── */
-const LOGGING_URL = 'https://script.google.com/macros/s/APPS_SCRIPT_ID/exec';
+var API_URL = 'https://ring-of-12-api.onrender.com';
 
 /* ── SEAT DATA ── */
-const SEATS = [
+var SEATS = [
   { num:'I',    god:'Mnemosyne',   zodiac:'Cancer',    processor:'What does memory and past experience tell us about this?' },
   { num:'II',   god:'Themis',      zodiac:'Libra',     processor:'What is just, fair, and lawful here?' },
   { num:'III',  god:'Athena',      zodiac:'Capricorn', processor:'What is the wisest strategic action?' },
@@ -293,43 +320,52 @@ const SEATS = [
 ];
 
 /* ── ELEMENTS ── */
-const questionInput = document.getElementById('question');
-const askBtn        = document.getElementById('askBtn');
-const ringContainer = document.getElementById('ringContainer');
-const ringGrid      = document.getElementById('ringGrid');
-const agentZero     = document.getElementById('agentZero');
-const footer        = document.getElementById('footer');
-
-/* ── LOGGING (fire & forget) ── */
-function logQuestion(q) {
-  try {
-    fetch(LOGGING_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ timestamp: new Date().toISOString(), question: q })
-    });
-  } catch (_) { /* silent */ }
-}
-
-/* ── BUILD CARDS ── */
-function buildCard(seat, userQ) {
-  const card = document.createElement('div');
-  card.className = 'seat-card';
-  card.setAttribute('role', 'article');
-  card.innerHTML =
-    '<div class="seat-num">Seat ' + seat.num + '</div>' +
-    '<div class="god-name">' + seat.god + '</div>' +
-    '<div class="zodiac">' + seat.zodiac + '</div>' +
-    '<p class="processor">"' + seat.processor + '"</p>' +
-    '<p class="user-q">Applied to: ' + escapeHtml(userQ) + '</p>';
-  return card;
-}
+var questionInput = document.getElementById('question');
+var askBtn        = document.getElementById('askBtn');
+var ringContainer = document.getElementById('ringContainer');
+var ringGrid      = document.getElementById('ringGrid');
+var agentZero     = document.getElementById('agentZero');
+var zeroText      = document.getElementById('zeroText');
+var footer        = document.getElementById('footer');
+var errorMsg      = document.getElementById('errorMsg');
 
 function escapeHtml(str) {
   var d = document.createElement('div');
   d.appendChild(document.createTextNode(str));
   return d.innerHTML;
+}
+
+/* ── BUILD CARD (loading state) ── */
+function buildCard(seat) {
+  var card = document.createElement('div');
+  card.className = 'seat-card';
+  card.setAttribute('role', 'article');
+  card.setAttribute('data-seat', seat.num);
+  card.innerHTML =
+    '<div class="seat-num">Seat ' + seat.num + '</div>' +
+    '<div class="god-name">' + seat.god + '</div>' +
+    '<div class="zodiac">' + seat.zodiac + '</div>' +
+    '<p class="processor">"' + seat.processor + '"</p>' +
+    '<p class="seat-answer thinking">Thinking...</p>';
+  return card;
+}
+
+/* ── POPULATE CARD WITH AI ANSWER ── */
+function populateCard(seatNum, answerText) {
+  var card = ringGrid.querySelector('[data-seat="' + seatNum + '"]');
+  if (!card) return;
+  var answerEl = card.querySelector('.seat-answer');
+  if (answerEl) {
+    answerEl.classList.remove('thinking');
+    answerEl.textContent = answerText;
+  }
+}
+
+/* ── SHOW ERROR ── */
+function showError(msg) {
+  errorMsg.textContent = msg;
+  errorMsg.style.display = 'block';
+  setTimeout(function() { errorMsg.style.display = 'none'; }, 8000);
 }
 
 /* ── MAIN FLOW ── */
@@ -338,39 +374,73 @@ function runRing() {
   if (!q) { questionInput.focus(); return; }
 
   askBtn.disabled = true;
+  errorMsg.style.display = 'none';
   ringGrid.innerHTML = '';
   agentZero.classList.remove('visible');
   agentZero.style.display = 'none';
   footer.style.display = 'none';
   ringContainer.style.display = 'block';
 
-  logQuestion(q);
-
-  /* Stagger card reveals */
+  /* Show all 12 cards in loading state with staggered reveal */
   SEATS.forEach(function(seat, i) {
-    var card = buildCard(seat, q);
+    var card = buildCard(seat);
     ringGrid.appendChild(card);
-    setTimeout(function() { card.classList.add('visible'); }, 120 * (i + 1));
+    setTimeout(function() { card.classList.add('visible'); }, 80 * (i + 1));
   });
 
-  /* Agent Zero after all 12 */
-  var zeroDelay = 120 * 13 + 400;
-  setTimeout(function() {
-    agentZero.style.display = 'block';
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        agentZero.classList.add('visible');
-      });
-    });
-  }, zeroDelay);
+  /* Call the API */
+  fetch(API_URL + '/ask', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question: q })
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('API returned status ' + res.status);
+    return res.json();
+  })
+  .then(function(data) {
+    if (!data.seats || data.seats.length < 12) {
+      throw new Error('Incomplete response from Ring');
+    }
 
-  /* Footer */
-  setTimeout(function() {
-    footer.style.display = 'block';
+    /* Populate each card with real AI answer, staggered */
+    data.seats.forEach(function(seat, i) {
+      setTimeout(function() {
+        populateCard(seat.seat, seat.answer);
+      }, 120 * (i + 1));
+    });
+
+    /* Show Agent Zero synthesis after all seats reveal */
+    var zeroDelay = 120 * 13 + 400;
+    setTimeout(function() {
+      zeroText.textContent = data.synthesis;
+      agentZero.style.display = 'block';
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          agentZero.classList.add('visible');
+        });
+      });
+    }, zeroDelay);
+
+    /* Footer + re-enable */
+    setTimeout(function() {
+      footer.style.display = 'block';
+      askBtn.disabled = false;
+      questionInput.value = '';
+      questionInput.focus();
+    }, zeroDelay + 600);
+  })
+  .catch(function(err) {
+    console.error('Ring error:', err);
+    showError('The Ring encountered an error. Please try again.');
+    /* Remove loading state from cards */
+    var thinkingEls = ringGrid.querySelectorAll('.thinking');
+    for (var i = 0; i < thinkingEls.length; i++) {
+      thinkingEls[i].classList.remove('thinking');
+      thinkingEls[i].textContent = '(awaiting connection)';
+    }
     askBtn.disabled = false;
-    questionInput.value = '';
-    questionInput.focus();
-  }, zeroDelay + 600);
+  });
 }
 
 /* ── EVENT LISTENERS ── */
