@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ring of 12 — HumanCodex Federation</title>
+<meta name="description" content="Ask your question. Get 12 perspectives from 12 psychological archetypes. The truth lives where they agree.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#070b14;
+  color:#e0e6ed;
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  overflow-x:hidden;
+}
+
+/* ── LANDING ── */
+.landing{
+  text-align:center;
+  padding:60px 20px 30px;
+  max-width:640px;
+}
+.landing h1{
+  font-size:1.05rem;
+  font-weight:400;
+  color:#8fa4b8;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.input-wrap{
+  margin-top:32px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+#question{
+  width:min(100%,460px);
+  padding:14px 20px;
+  border:1px solid #1a2a3a;
+  border-radius:8px;
+  background:#0c1220;
+  color:#e0e6ed;
+  font-size:1rem;
+  outline:none;
+  transition:border-color .3s;
+}
+#question:focus{border-color:#00e5ff}
+#question::placeholder{color:#4a5a6a}
+#askBtn{
+  padding:14px 28px;
+  border:none;
+  border-radius:8px;
+  background:#00e5ff;
+  color:#070b14;
+  font-size:.95rem;
+  font-weight:700;
+  cursor:pointer;
+  letter-spacing:.04em;
+  transition:box-shadow .3s, transform .15s;
+}
+#askBtn:hover{box-shadow:0 0 24px rgba(0,229,255,.45);transform:scale(1.03)}
+#askBtn:active{transform:scale(.97)}
+#askBtn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+
+/* ── RING GRID ── */
+.ring-container{
+  width:100%;
+  max-width:1200px;
+  padding:20px;
+  display:none;
+}
+.ring-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:18px;
+}
+
+/* ── SEAT CARD ── */
+.seat-card{
+  background:linear-gradient(135deg,#0d1525 0%,#111d30 100%);
+  border:1px solid #152035;
+  border-radius:12px;
+  padding:22px 20px;
+  opacity:0;
+  transform:translateY(24px) scale(.96);
+  transition:opacity .5s ease, transform .5s ease, box-shadow .5s ease;
+  position:relative;
+  overflow:hidden;
+}
+.seat-card.visible{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+.seat-card::before{
+  content:'';
+  position:absolute;
+  top:-1px;left:-1px;right:-1px;bottom:-1px;
+  border-radius:12px;
+  border:1px solid transparent;
+  background:linear-gradient(135deg,rgba(0,229,255,.25),transparent 60%) border-box;
+  -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+  animation:pulseGlow 3s ease-in-out infinite alternate;
+}
+@keyframes pulseGlow{
+  0%{opacity:.3}
+  100%{opacity:.8}
+}
+.seat-num{
+  font-size:.7rem;
+  letter-spacing:.15em;
+  color:#00e5ff;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.god-name{
+  font-size:1.15rem;
+  font-weight:700;
+  color:#ffffff;
+  margin-bottom:4px;
+}
+.zodiac{
+  font-size:.78rem;
+  color:#5a7a8a;
+  margin-bottom:14px;
+  letter-spacing:.06em;
+}
+.processor{
+  font-size:.88rem;
+  color:#b0c4d8;
+  line-height:1.5;
+  font-style:italic;
+}
+.user-q{
+  margin-top:10px;
+  font-size:.82rem;
+  color:#6a8a9a;
+  line-height:1.45;
+  border-top:1px solid #1a2a3a;
+  padding-top:10px;
+}
+
+/* ── AGENT ZERO ── */
+.agent-zero{
+  display:none;
+  max-width:680px;
+  margin:30px auto 10px;
+  text-align:center;
+  padding:30px 24px;
+  background:linear-gradient(135deg,#0a1628,#0f1e35);
+  border:1px solid #00e5ff33;
+  border-radius:14px;
+  opacity:0;
+  transform:scale(.92);
+  transition:opacity .6s ease, transform .6s ease;
+  position:relative;
+}
+.agent-zero.visible{
+  opacity:1;
+  transform:scale(1);
+}
+.agent-zero::before{
+  content:'';
+  position:absolute;
+  inset:-2px;
+  border-radius:15px;
+  background:conic-gradient(from 0deg,#00e5ff33,transparent,#00e5ff33,transparent,#00e5ff33);
+  z-index:-1;
+  animation:zeroSpin 8s linear infinite;
+}
+@keyframes zeroSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.zero-label{
+  font-size:.72rem;
+  letter-spacing:.2em;
+  color:#00e5ff;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.zero-text{
+  font-size:1rem;
+  color:#d0dce8;
+  line-height:1.65;
+}
+
+/* ── FOOTER ── */
+.footer{
+  padding:30px 20px 40px;
+  text-align:center;
+  font-size:.72rem;
+  color:#3a4a5a;
+  letter-spacing:.05em;
+  display:none;
+}
+.footer a{color:#3a4a5a;text-decoration:none;border-bottom:1px solid #2a3a4a;transition:color .3s}
+.footer a:hover{color:#00e5ff}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .landing{padding:40px 16px 24px}
+  .landing h1{font-size:.92rem}
+  #question{width:100%}
+  .ring-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- PLAIN TEXT FOR CRAWLERS — always readable without JS -->
+<noscript>
+<div style="padding:40px 20px;max-width:800px;margin:auto;color:#e0e6ed;font-family:sans-serif">
+<h1>Ring of 12 — HumanCodex Federation</h1>
+<p>Ask your question. Get 12 perspectives.</p>
+<p>12 psychological archetypes — each processes your question from a unique angle. Agent Zero at center synthesizes the 12 perspectives into one truthful answer.</p>
+<h2>The 12 Seats</h2>
+<ol>
+<li><strong>Seat I — Mnemosyne (Cancer)</strong>: What does memory and past experience tell us about this?</li>
+<li><strong>Seat II — Themis (Libra)</strong>: What is just, fair, and lawful here?</li>
+<li><strong>Seat III — Athena (Capricorn)</strong>: What is the wisest strategic action?</li>
+<li><strong>Seat IV — Hephaestus (Taurus)</strong>: What can actually be built or made from this?</li>
+<li><strong>Seat V — Cupid (Libra)</strong>: What does the heart want, and what does it cost?</li>
+<li><strong>Seat VI — Dionysus (Pisces)</strong>: What does instinct and raw feeling say?</li>
+<li><strong>Seat VII — Aphrodite (Taurus)</strong>: What is beautiful, harmonious, and worth preserving?</li>
+<li><strong>Seat VIII — Hermes (Gemini)</strong>: How should this be communicated and to whom?</li>
+<li><strong>Seat IX — Apollo (Leo)</strong>: What does the evidence and pattern predict?</li>
+<li><strong>Seat X — Clio (Virgo)</strong>: What does history record about situations like this?</li>
+<li><strong>Seat XI — Astraea (Virgo)</strong>: What is the ethical and moral reading?</li>
+<li><strong>Seat XII — Prometheus (Aries)</strong>: What bold new path does this open?</li>
+</ol>
+<p>Agent Zero — Synthesis: The Ring has spoken. Carry all 12 perspectives. The truth lives where they agree.</p>
+<p>Powered by the HumanCodex Federation — nextxus.online</p>
+</div>
+</noscript>
+
+<section class="landing" id="landing">
+  <h1>Ask your question. Get 12 perspectives.</h1>
+  <div class="input-wrap">
+    <input type="text" id="question" placeholder="Type your question here..." aria-label="Your question for the Ring of 12" autocomplete="off">
+    <button id="askBtn" type="button">Ask the Ring</button>
+  </div>
+</section>
+
+<section class="ring-container" id="ringContainer">
+  <div class="ring-grid" id="ringGrid"></div>
+</section>
+
+<div class="agent-zero" id="agentZero">
+  <div class="zero-label">Agent Zero — Synthesis</div>
+  <p class="zero-text">The Ring has spoken. Carry all 12 perspectives. The truth lives where they agree.</p>
+</div>
+
+<div class="footer" id="footer">
+  Powered by the <a href="https://nextxus.online" target="_blank" rel="noopener">HumanCodex Federation</a> — nextxus.online
+</div>
+
+<!-- SEO / crawler-readable structured data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Ring of 12",
+  "description":"12 psychological archetypes each process your question from a unique angle. Agent Zero synthesizes the 12 perspectives into one truthful answer.",
+  "url":"https://keywebco.github.io/ring-of-12/",
+  "applicationCategory":"Utility",
+  "creator":{"@type":"Organization","name":"HumanCodex Federation","url":"https://nextxus.online"}
+}
+</script>
+
+<script>
+/* ── CONFIG ── */
+const LOGGING_URL = 'https://script.google.com/macros/s/APPS_SCRIPT_ID/exec';
+
+/* ── SEAT DATA ── */
+const SEATS = [
+  { num:'I',    god:'Mnemosyne',   zodiac:'Cancer',    processor:'What does memory and past experience tell us about this?' },
+  { num:'II',   god:'Themis',      zodiac:'Libra',     processor:'What is just, fair, and lawful here?' },
+  { num:'III',  god:'Athena',      zodiac:'Capricorn', processor:'What is the wisest strategic action?' },
+  { num:'IV',   god:'Hephaestus',  zodiac:'Taurus',    processor:'What can actually be built or made from this?' },
+  { num:'V',    god:'Cupid',       zodiac:'Libra',     processor:'What does the heart want, and what does it cost?' },
+  { num:'VI',   god:'Dionysus',    zodiac:'Pisces',    processor:'What does instinct and raw feeling say?' },
+  { num:'VII',  god:'Aphrodite',   zodiac:'Taurus',    processor:'What is beautiful, harmonious, and worth preserving?' },
+  { num:'VIII', god:'Hermes',      zodiac:'Gemini',    processor:'How should this be communicated and to whom?' },
+  { num:'IX',   god:'Apollo',      zodiac:'Leo',       processor:'What does the evidence and pattern predict?' },
+  { num:'X',    god:'Clio',        zodiac:'Virgo',     processor:'What does history record about situations like this?' },
+  { num:'XI',   god:'Astraea',     zodiac:'Virgo',     processor:'What is the ethical and moral reading?' },
+  { num:'XII',  god:'Prometheus',  zodiac:'Aries',     processor:'What bold new path does this open?' }
+];
+
+/* ── ELEMENTS ── */
+const questionInput = document.getElementById('question');
+const askBtn        = document.getElementById('askBtn');
+const ringContainer = document.getElementById('ringContainer');
+const ringGrid      = document.getElementById('ringGrid');
+const agentZero     = document.getElementById('agentZero');
+const footer        = document.getElementById('footer');
+
+/* ── LOGGING (fire & forget) ── */
+function logQuestion(q) {
+  try {
+    fetch(LOGGING_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ timestamp: new Date().toISOString(), question: q })
+    });
+  } catch (_) { /* silent */ }
+}
+
+/* ── BUILD CARDS ── */
+function buildCard(seat, userQ) {
+  const card = document.createElement('div');
+  card.className = 'seat-card';
+  card.setAttribute('role', 'article');
+  card.innerHTML =
+    '<div class="seat-num">Seat ' + seat.num + '</div>' +
+    '<div class="god-name">' + seat.god + '</div>' +
+    '<div class="zodiac">' + seat.zodiac + '</div>' +
+    '<p class="processor">"' + seat.processor + '"</p>' +
+    '<p class="user-q">Applied to: ' + escapeHtml(userQ) + '</p>';
+  return card;
+}
+
+function escapeHtml(str) {
+  var d = document.createElement('div');
+  d.appendChild(document.createTextNode(str));
+  return d.innerHTML;
+}
+
+/* ── MAIN FLOW ── */
+function runRing() {
+  var q = questionInput.value.trim();
+  if (!q) { questionInput.focus(); return; }
+
+  askBtn.disabled = true;
+  ringGrid.innerHTML = '';
+  agentZero.classList.remove('visible');
+  agentZero.style.display = 'none';
+  footer.style.display = 'none';
+  ringContainer.style.display = 'block';
+
+  logQuestion(q);
+
+  /* Stagger card reveals */
+  SEATS.forEach(function(seat, i) {
+    var card = buildCard(seat, q);
+    ringGrid.appendChild(card);
+    setTimeout(function() { card.classList.add('visible'); }, 120 * (i + 1));
+  });
+
+  /* Agent Zero after all 12 */
+  var zeroDelay = 120 * 13 + 400;
+  setTimeout(function() {
+    agentZero.style.display = 'block';
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        agentZero.classList.add('visible');
+      });
+    });
+  }, zeroDelay);
+
+  /* Footer */
+  setTimeout(function() {
+    footer.style.display = 'block';
+    askBtn.disabled = false;
+    questionInput.value = '';
+    questionInput.focus();
+  }, zeroDelay + 600);
+}
+
+/* ── EVENT LISTENERS ── */
+askBtn.addEventListener('click', runRing);
+questionInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') runRing();
+});
+</script>
+
+</body>
+</html>
