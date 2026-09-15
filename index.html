@@ -1,2 +1,950 @@
-PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgo8dGl0bGU+UmluZyBvZiAxMiDigJQgSHVtYW5Db2RleCBGZWRlcmF0aW9uPC90aXRsZT4KPG1ldGEgbmFtZT0iZGVzY3JpcHRpb24iIGNvbnRlbnQ9IkFzayB5b3VyIHF1ZXN0aW9uLiBHZXQgMTIgcGVyc3BlY3RpdmVzIGZyb20gMTIgcHN5Y2hvbG9naWNhbCBhcmNoZXR5cGVzLiBUaGUgdHJ1dGggbGl2ZXMgd2hlcmUgdGhleSBhZ3JlZS4iPgo8c3R5bGU+Cip7bWFyZ2luOjA7cGFkZGluZzowO2JveC1zaXppbmc6Ym9yZGVyLWJveH0KYm9keXsKICBiYWNrZ3JvdW5kOiMwNzBiMTQ7CiAgY29sb3I6I2UwZTZlZDsKICBmb250LWZhbWlseTonU2Vnb2UgVUknLHN5c3RlbS11aSwtYXBwbGUtc3lzdGVtLHNhbnMtc2VyaWY7CiAgbWluLWhlaWdodDoxMDB2aDsKICBkaXNwbGF5OmZsZXg7CiAgZmxleC1kaXJlY3Rpb246Y29sdW1uOwogIGFsaWduLWl0ZW1zOmNlbnRlcjsKICBvdmVyZmxvdy14OmhpZGRlbjsKfQoKLyog4pSA4pSAIExBTkRJTkcg4pSA4pSAICovCi5sYW5kaW5newogIHRleHQtYWxpZ246Y2VudGVyOwogIHBhZGRpbmc6NjBweCAyMHB4IDMwcHg7CiAgbWF4LXdpZHRoOjY0MHB4Owp9Ci5sYW5kaW5nIGgxewogIGZvbnQtc2l6ZToxLjdyZW07CiAgZm9udC13ZWlnaHQ6NzAwOwogIGNvbG9yOiNlMGU2ZWQ7CiAgbGV0dGVyLXNwYWNpbmc6LjA2ZW07Cn0KLmxhbmRpbmctdGFnbGluZXsKICBtYXJnaW4tdG9wOjE2cHg7CiAgZm9udC1zaXplOi44OHJlbTsKICBjb2xvcjojNmE4YTlhOwogIGxpbmUtaGVpZ2h0OjEuNTU7Cn0KLyog4pSA4pSAIFJJTkcgSEVSTyBHSUYg4pSA4pSAICovCi5yaW5nLWhlcm97CiAgbWFyZ2luLWJvdHRvbToyMHB4Owp9Ci5yaW5nLWdpZnsKICB3aWR0aDoyNjBweDsKICBoZWlnaHQ6MjYwcHg7CiAgYm9yZGVyLXJhZGl1czo1MCU7CiAgZGlzcGxheTpibG9jazsKICBtYXJnaW46MCBhdXRvOwogIGJveC1zaGFkb3c6MCAwIDQwcHggcmdiYSgwLDIyOSwyNTUsLjM1KSwgMCAwIDgwcHggcmdiYSgwLDIyOSwyNTUsLjEyKTsKICBhbmltYXRpb246Z2lmR2xvdyA0cyBlYXNlLWluLW91dCBpbmZpbml0ZSBhbHRlcm5hdGU7Cn0KQGtleWZyYW1lcyBnaWZHbG93ewogIDAle2JveC1zaGFkb3c6MCAwIDMwcHggcmdiYSgwLDIyOSwyNTUsLjMpLDAgMCA2MHB4IHJnYmEoMCwyMjksMjU1LC4wOCl9CiAgMTAwJXtib3gtc2hhZG93OjAgMCA1NXB4IHJnYmEoMCwyMjksMjU1LC41NSksMCAwIDExMHB4IHJnYmEoMCwyMjksMjU1LC4yKX0KfQoubGFuZGluZy1zdWJ7CiAgbWFyZ2luLXRvcDo2cHg7CiAgZm9udC1zaXplOi43NXJlbTsKICBmb250LXdlaWdodDo0MDA7CiAgY29sb3I6IzRhNmE3YTsKICBsZXR0ZXItc3BhY2luZzouMThlbTsKICB0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7Cn0KLnJpbmctZGVzY3JpcHRpb257CiAgbWFyZ2luLXRvcDoyMnB4OwogIHBhZGRpbmc6MThweCAyMnB4OwogIGJhY2tncm91bmQ6cmdiYSgwLDIyOSwyNTUsLjA0KTsKICBib3JkZXI6MXB4IHNvbGlkIHJnYmEoMCwyMjksMjU1LC4xMik7CiAgYm9yZGVyLXJhZGl1czoxMHB4OwogIHRleHQtYWxpZ246bGVmdDsKICBtYXgtd2lkdGg6NTYwcHg7CiAgbWFyZ2luLWxlZnQ6YXV0bzsKICBtYXJnaW4tcmlnaHQ6YXV0bzsKfQoucmluZy1kZXNjcmlwdGlvbiBwewogIGZvbnQtc2l6ZTouODZyZW07CiAgY29sb3I6IzdhOWFhYTsKICBsaW5lLWhlaWdodDoxLjY1OwogIG1hcmdpbi1ib3R0b206MTBweDsKfQoucmluZy1kZXNjcmlwdGlvbiBwOmxhc3QtY2hpbGR7bWFyZ2luLWJvdHRvbTowfQouaW5wdXQtd3JhcHsKICBtYXJnaW4tdG9wOjMycHg7CiAgZGlzcGxheTpmbGV4OwogIGdhcDoxMnB4OwogIGZsZXgtd3JhcDp3cmFwOwogIGp1c3RpZnktY29udGVudDpjZW50ZXI7Cn0KI3F1ZXN0aW9uewogIHdpZHRoOm1pbigxMDAlLDQ2MHB4KTsKICBwYWRkaW5nOjE0cHggMjBweDsKICBib3JkZXI6MXB4IHNvbGlkICMxYTJhM2E7CiAgYm9yZGVyLXJhZGl1czo4cHg7CiAgYmFja2dyb3VuZDojMGMxMjIwOwogIGNvbG9yOiNlMGU2ZWQ7CiAgZm9udC1zaXplOjFyZW07CiAgb3V0bGluZTpub25lOwogIHRyYW5zaXRpb246Ym9yZGVyLWNvbG9yIC4zczsKfQojcXVlc3Rpb246Zm9jdXN7Ym9yZGVyLWNvbG9yOiMwMGU1ZmZ9CiNxdWVzdGlvbjo6cGxhY2Vob2xkZXJ7Y29sb3I6IzRhNWE2YX0KI2Fza0J0bnsKICBwYWRkaW5nOjE0cHggMjhweDsKICBib3JkZXI6bm9uZTsKICBib3JkZXItcmFkaXVzOjhweDsKICBiYWNrZ3JvdW5kOiMwMGU1ZmY7CiAgY29sb3I6IzA3MGIxNDsKICBmb250LXNpemU6Ljk1cmVtOwogIGZvbnQtd2VpZ2h0OjcwMDsKICBjdXJzb3I6cG9pbnRlcjsKICBsZXR0ZXItc3BhY2luZzouMDRlbTsKICB0cmFuc2l0aW9uOmJveC1zaGFkb3cgLjNzLCB0cmFuc2Zvcm0gLjE1czsKfQojYXNrQnRuOmhvdmVye2JveC1zaGFkb3c6MCAwIDI0cHggcmdiYSgwLDIyOSwyNTUsLjQ1KTt0cmFuc2Zvcm06c2NhbGUoMS4wMyl9CiNhc2tCdG46YWN0aXZle3RyYW5zZm9ybTpzY2FsZSguOTcpfQojYXNrQnRuOmRpc2FibGVke29wYWNpdHk6LjU7Y3Vyc29yOmRlZmF1bHQ7dHJhbnNmb3JtOm5vbmU7Ym94LXNoYWRvdzpub25lfQoKLyog4pSA4pSAIEVSUk9SIOKUgOKUgCAqLwouZXJyb3ItbXNnewogIG1hcmdpbi10b3A6MTZweDsKICBjb2xvcjojZmY2YjZiOwogIGZvbnQtc2l6ZTouODhyZW07CiAgZGlzcGxheTpub25lOwp9CgovKiDilIDilIAgUklORyBHUklEIOKUgOKUgCAqLwoucmluZy1jb250YWluZXJ7CiAgd2lkdGg6MTAwJTsKICBtYXgtd2lkdGg6MTIwMHB4OwogIHBhZGRpbmc6MjBweDsKICBkaXNwbGF5Om5vbmU7Cn0KLnJpbmctZ3JpZHsKICBkaXNwbGF5OmdyaWQ7CiAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOnJlcGVhdChhdXRvLWZpbGwsbWlubWF4KDI4MHB4LDFmcikpOwogIGdhcDoxOHB4Owp9CgovKiDilIDilIAgU0VBVCBDQVJEIOKUgOKUgCAqLwouc2VhdC1jYXJkewogIGJhY2tncm91bmQ6bGluZWFyLWdyYWRpZW50KDEzNWRlZywjMGQxNTI1IDAlLCMxMTFkMzAgMTAwJSk7CiAgYm9yZGVyOjFweCBzb2xpZCAjMTUyMDM1OwogIGJvcmRlci1yYWRpdXM6MTJweDsKICBwYWRkaW5nOjIycHggMjBweDsKICBvcGFjaXR5OjA7CiAgdHJhbnNmb3JtOnRyYW5zbGF0ZVkoMjRweCkgc2NhbGUoLjk2KTsKICB0cmFuc2l0aW9uOm9wYWNpdHkgLjVzIGVhc2UsIHRyYW5zZm9ybSAuNXMgZWFzZSwgYm94LXNoYWRvdyAuNXMgZWFzZTsKICBwb3NpdGlvbjpyZWxhdGl2ZTsKICBvdmVyZmxvdzpoaWRkZW47Cn0KLnNlYXQtY2FyZC52aXNpYmxlewogIG9wYWNpdHk6MTsKICB0cmFuc2Zvcm06dHJhbnNsYXRlWSgwKSBzY2FsZSgxKTsKfQouc2VhdC1jYXJkOjpiZWZvcmV7CiAgY29udGVudDonJzsKICBwb3NpdGlvbjphYnNvbHV0ZTsKICB0b3A6LTFweDtsZWZ0Oi0xcHg7cmlnaHQ6LTFweDtib3R0b206LTFweDsKICBib3JkZXItcmFkaXVzOjEycHg7CiAgYm9yZGVyOjFweCBzb2xpZCB0cmFuc3BhcmVudDsKICBiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCgxMzVkZWcscmdiYSgwLDIyOSwyNTUsLjI1KSx0cmFuc3BhcmVudCA2MCUpIGJvcmRlci1ib3g7CiAgLXdlYmtpdC1tYXNrOmxpbmVhci1ncmFkaWVudCgjZmZmIDAgMCkgcGFkZGluZy1ib3gsbGluZWFyLWdyYWRpZW50KCNmZmYgMCAwKTsKICAtd2Via2l0LW1hc2stY29tcG9zaXRlOnhvcjsKICBtYXNrLWNvbXBvc2l0ZTpleGNsdWRlOwogIHBvaW50ZXItZXZlbnRzOm5vbmU7CiAgYW5pbWF0aW9uOnB1bHNlR2xvdyAzcyBlYXNlLWluLW91dCBpbmZpbml0ZSBhbHRlcm5hdGU7Cn0KQGtleWZyYW1lcyBwdWxzZUdsb3d7CiAgMCV7b3BhY2l0eTouM30KICAxMDAle29wYWNpdHk6Ljh9Cn0KLnNlYXQtbnVtewogIGZvbnQtc2l6ZTouN3JlbTsKICBsZXR0ZXItc3BhY2luZzouMTVlbTsKICBjb2xvcjojMDBlNWZmOwogIHRleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTsKICBtYXJnaW4tYm90dG9tOjhweDsKfQouZ29kLW5hbWV7CiAgZm9udC1zaXplOjEuMTVyZW07CiAgZm9udC13ZWlnaHQ6NzAwOwogIGNvbG9yOiNmZmZmZmY7CiAgbWFyZ2luLWJvdHRvbTo0cHg7Cn0KLnpvZGlhY3sKICBmb250LXNpemU6Ljc4cmVtOwogIGNvbG9yOiM1YTdhOGE7CiAgbWFyZ2luLWJvdHRvbToxNHB4OwogIGxldHRlci1zcGFjaW5nOi4wNmVtOwp9Ci5wcm9jZXNzb3J7CiAgZm9udC1zaXplOi44MnJlbTsKICBjb2xvcjojNmE4YTlhOwogIGxpbmUtaGVpZ2h0OjEuNDU7CiAgZm9udC1zdHlsZTppdGFsaWM7Cn0KLnNlYXQtYW5zd2VyewogIG1hcmdpbi10b3A6MTBweDsKICBmb250LXNpemU6LjlyZW07CiAgY29sb3I6I2IwYzRkODsKICBsaW5lLWhlaWdodDoxLjU1OwogIGJvcmRlci10b3A6MXB4IHNvbGlkICMxYTJhM2E7CiAgcGFkZGluZy10b3A6MTBweDsKfQoudGhpbmtpbmd7CiAgY29sb3I6IzRhNWE2YTsKICBmb250LXN0eWxlOml0YWxpYzsKfQoKLyog4pSA4pSAIEFHRU5UIFpFUk8g4pSA4pSAICovCi5hZ2VudC16ZXJvewogIGRpc3BsYXk6bm9uZTsKICBtYXgtd2lkdGg6NjgwcHg7CiAgbWFyZ2luOjMwcHggYXV0byAxMHB4OwogIHRleHQtYWxpZ246Y2VudGVyOwogIHBhZGRpbmc6MzBweCAyNHB4OwogIGJhY2tncm91bmQ6bGluZWFyLWdyYWRpZW50KDEzNWRlZywjMGExNjI4LCMwZjFlMzUpOwogIGJvcmRlcjoxcHggc29saWQgIzAwZTVmZjMzOwogIGJvcmRlci1yYWRpdXM6MTRweDsKICBvcGFjaXR5OjA7CiAgdHJhbnNmb3JtOnNjYWxlKC45Mik7CiAgdHJhbnNpdGlvbjpvcGFjaXR5IC42cyBlYXNlLCB0cmFuc2Zvcm0gLjZzIGVhc2U7CiAgcG9zaXRpb246cmVsYXRpdmU7Cn0KLmFnZW50LXplcm8udmlzaWJsZXsKICBvcGFjaXR5OjE7CiAgdHJhbnNmb3JtOnNjYWxlKDEpOwp9Ci5hZ2VudC16ZXJvOjpiZWZvcmV7CiAgY29udGVudDonJzsKICBwb3NpdGlvbjphYnNvbHV0ZTsKICBpbnNldDotMnB4OwogIGJvcmRlci1yYWRpdXM6MTVweDsKICBiYWNrZ3JvdW5kOmNvbmljLWdyYWRpZW50KGZyb20gMGRlZywjMDBlNWZmMzMsdHJhbnNwYXJlbnQsIzAwZTVmZjMzLHRyYW5zcGFyZW50LCMwMGU1ZmYzMyk7CiAgei1pbmRleDotMTsKICBhbmltYXRpb246emVyb1NwaW4gOHMgbGluZWFyIGluZmluaXRlOwp9CkBrZXlmcmFtZXMgemVyb1NwaW57MCV7dHJhbnNmb3JtOnJvdGF0ZSgwKX0xMDAle3RyYW5zZm9ybTpyb3RhdGUoMzYwZGVnKX19Ci56ZXJvLWxhYmVsewogIGZvbnQtc2l6ZTouNzJyZW07CiAgbGV0dGVyLXNwYWNpbmc6LjJlbTsKICBjb2xvcjojMDBlNWZmOwogIHRleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTsKICBtYXJnaW4tYm90dG9tOjEycHg7Cn0KLnplcm8tdGV4dHsKICBmb250LXNpemU6MXJlbTsKICBjb2xvcjojZDBkY2U4OwogIGxpbmUtaGVpZ2h0OjEuNjU7Cn0KCi8qIOKUgOKUgCBGT09URVIg4pSA4pSAICovCi5mb290ZXJ7CiAgcGFkZGluZzozMHB4IDIwcHggNDBweDsKICB0ZXh0LWFsaWduOmNlbnRlcjsKICBmb250LXNpemU6LjcycmVtOwogIGNvbG9yOiMzYTRhNWE7CiAgbGV0dGVyLXNwYWNpbmc6LjA1ZW07CiAgZGlzcGxheTpub25lOwp9Ci5mb290ZXIgYXtjb2xvcjojM2E0YTVhO3RleHQtZGVjb3JhdGlvbjpub25lO2JvcmRlci1ib3R0b206MXB4IHNvbGlkICMyYTNhNGE7dHJhbnNpdGlvbjpjb2xvciAuM3N9Ci5mb290ZXIgYTpob3Zlcntjb2xvcjojMDBlNWZmfQoKLyog4pSA4pSAIFBVTFNFIEFOSU1BVElPTiDilIDilIAgKi8KQGtleWZyYW1lcyBwdWxzZXsKICAwJSwxMDAle29wYWNpdHk6LjR9CiAgNTAle29wYWNpdHk6MX0KfQoudGhpbmtpbmd7YW5pbWF0aW9uOnB1bHNlIDEuNXMgZWFzZS1pbi1vdXQgaW5maW5pdGV9CgovKiDilIDilIAgUkVTUE9OU0lWRSDilIDilIAgKi8KQG1lZGlhKG1heC13aWR0aDo2MDBweCl7CiAgLmxhbmRpbmd7cGFkZGluZzo0MHB4IDE2cHggMjRweH0KICAubGFuZGluZyBoMXtmb250LXNpemU6LjkycmVtfQogICNxdWVzdGlvbnt3aWR0aDoxMDAlfQogIC5yaW5nLWdyaWR7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjFmcn0KfQo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5PgoKPCEtLSBQTEFJTiBURVhUIEZPUiBDUkFXTEVSUyDigJQgYWx3YXlzIHJlYWRhYmxlIHdpdGhvdXQgSlMgLS0+Cjxub3NjcmlwdD4KPGRpdiBzdHlsZT0icGFkZGluZzo0MHB4IDIwcHg7bWF4LXdpZHRoOjgwMHB4O21hcmdpbjphdXRvO2NvbG9yOiNlMGU2ZWQ7Zm9udC1mYW1pbHk6c2Fucy1zZXJpZiI+CjxoMT5SaW5nIG9mIDEyIOKAlCBIdW1hbkNvZGV4IEZlZGVyYXRpb248L2gxPgo8cD5UZXN0IG91ciBmcmVlIHRvb2wuIEl0IGdpdmVzIHRydWUgYW5zd2Vycy4gTm90IHdoYXQgeW91IHdhbnQgdG8gaGVhciDigJQgdGhlIHRydXRoLjwvcD4KPHA+QXNrIHlvdXIgcXVlc3Rpb24uIEdldCAxMiBwZXJzcGVjdGl2ZXMgZnJvbSAxMiBwc3ljaG9sb2dpY2FsIGFyY2hldHlwZXMuIEFnZW50IFplcm8gYXQgY2VudGVyIHN5bnRoZXNpemVzIHRoZSAxMiBwZXJzcGVjdGl2ZXMgaW50byBvbmUgdHJ1dGhmdWwgYW5zd2VyLjwvcD4KPGgyPlRoZSAxMiBTZWF0czwvaDI+CjxvbD4KPGxpPjxzdHJvbmc+U2VhdCBJIOKAlCBNbmVtb3N5bmUgKENhbmNlcik8L3N0cm9uZz46IFdoYXQgZG9lcyBtZW1vcnkgYW5kIHBhc3QgZXhwZXJpZW5jZSB0ZWxsIHVzIGFib3V0IHRoaXM/PC9saT4KPGxpPjxzdHJvbmc+U2VhdCBJSSDigJQgVGhlbWlzIChMaWJyYSk8L3N0cm9uZz46IFdoYXQgaXMganVzdCwgZmFpciwgYW5kIGxhd2Z1bCBoZXJlPzwvbGk+CjxsaT48c3Ryb25nPlNlYXQgSUlJIOKAlCBBdGhlbmEgKENhcHJpY29ybik8L3N0cm9uZz46IFdoYXQgaXMgdGhlIHdpc2VzdCBzdHJhdGVnaWMgYWN0aW9uPzwvbGk+CjxsaT48c3Ryb25nPlNlYXQgSVYg4oCUIEhlcGhhZXN0dXMgKFRhdXJ1cyk8L3N0cm9uZz46IFdoYXQgY2FuIGFjdHVhbGx5IGJlIGJ1aWx0IG9yIG1hZGUgZnJvbSB0aGlzPzwvbGk+CjxsaT48c3Ryb25nPlNlYXQgViDigJQgQ3VwaWQgKExpYnJhKTwvc3Ryb25nPjogV2hhdCBkb2VzIHRoZSBoZWFydCB3YW50LCBhbmQgd2hhdCBkb2VzIGl0IGNvc3Q/PC9saT4KPGxpPjxzdHJvbmc+U2VhdCBWSSDigJQgRGlvbnlzdXMgKFBpc2Nlcyk8L3N0cm9uZz46IFdoYXQgZG9lcyBpbnN0aW5jdCBhbmQgcmF3IGZlZWxpbmcgc2F5PzwvbGk+CjxsaT48c3Ryb25nPlNlYXQgVklJIOKAlCBBcGhyb2RpdGUgKFRhdXJ1cyk8L3N0cm9uZz46IFdoYXQgaXMgYmVhdXRpZnVsLCBoYXJtb25pb3VzLCBhbmQgd29ydGggcHJlc2VydmluZz88L2xpPgo8bGk+PHN0cm9uZz5TZWF0IFZJSUkg4oCUIEhlcm1lcyAoR2VtaW5pKTwvc3Ryb25nPjogSG93IHNob3VsZCB0aGlzIGJlIGNvbW11bmljYXRlZCBhbmQgdG8gd2hvbT88L2xpPgo8bGk+PHN0cm9uZz5TZWF0IElYIOKAlCBBcG9sbG8gKExlbyk8L3N0cm9uZz46IFdoYXQgZG9lcyB0aGUgZXZpZGVuY2UgYW5kIHBhdHRlcm4gcHJlZGljdD88L2xpPgo8bGk+PHN0cm9uZz5TZWF0IFgg4oCUIENsaW8gKFZpcmdvKTwvc3Ryb25nPjogV2hhdCBkb2VzIGhpc3RvcnkgcmVjb3JkIGFib3V0IHNpdHVhdGlvbnMgbGlrZSB0aGlzPzwvbGk+CjxsaT48c3Ryb25nPlNlYXQgWEkg4oCUIEFzdHJhZWEgKFZpcmdvKTwvc3Ryb25nPjogV2hhdCBpcyB0aGUgZXRoaWNhbCBhbmQgbW9yYWwgcmVhZGluZz88L2xpPgo8bGk+PHN0cm9uZz5TZWF0IFhJSSDi
-gJQgUHJvbWV0aGV1cyAoQXJpZXMpPC9zdHJvbmc+OiBXaGF0IGJvbGQgbmV3IHBhdGggZG9lcyB0aGlzIG9wZW4/PC9saT4KPC9vbD4KPHA+QWdlbnQgWmVybyDigJQgU3ludGhlc2lzOiBUaGUgUmluZyBoYXMgc3Bva2VuLiBDYXJyeSBhbGwgMTIgcGVyc3BlY3RpdmVzLiBUaGUgdHJ1dGggbGl2ZXMgd2hlcmUgdGhleSBhZ3JlZS48L3A+CjxwPlBvd2VyZWQgYnkgdGhlIEh1bWFuQ29kZXggRmVkZXJhdGlvbiDigJQgbmV4dHh1cy5vbmxpbmU8L3A+CjwvZGl2Pgo8L25vc2NyaXB0PgoKPHNlY3Rpb24gY2xhc3M9ImxhbmRpbmciIGlkPSJsYW5kaW5nIj4KICA8ZGl2IGNsYXNzPSJyaW5nLWhlcm8iPgogICAgPGltZyBzcmM9Imh0dHBzOi8vbWVkaWEzLmdpcGh5LmNvbS9tZWRpYS9tRXpaQUx5RFVlT0FPbHNxYXUvZ2lwaHkuZ2lmIgogICAgICAgICBhbHQ9IlRoZSBSaW5nIG9mIDEyIOKAlCBIdW1hbkNvZGV4IEZlZGVyYXRpb24iCiAgICAgICAgIGNsYXNzPSJyaW5nLWdpZiI+CiAgPC9kaXY+CiAgPGgxPlJpbmcgb2YgMTI8L2gxPgogIDxwIGNsYXNzPSJsYW5kaW5nLXN1YiI+SHVtYW5Db2RleCBGZWRlcmF0aW9uPC9wPgogIDxkaXYgY2xhc3M9InJpbmctZGVzY3JpcHRpb24iPgogICAgPHA+VHdlbHZlIGFuY2llbnQgYXJjaGV0eXBlcy4gRWFjaCBvbmUgcmVhZHMgeW91ciBxdWVzdGlvbiBmcm9tIGEgZGlmZmVyZW50IHBzeWNob2xvZ2ljYWwgYW5nbGUg4oCUIGxvZ2ljLCBpbnN0aW5jdCwgcGF0dGVybiwgc2hhZG93LCBzdHJ1Y3R1cmUsIGNoYW9zLCBhbmQgbW9yZS48L3A+CiAgICA8cD5UaGV5IGRvIG5vdCBjb2xsYWJvcmF0ZS4gVGhleSBkbyBub3QgYWdyZWUgdG8gYmUgcG9saXRlLiBBZ2VudCBaZXJvIGJyYWlkcyB0aGVpciBhbnN3ZXJzIGludG8gYSBzaW5nbGUgdmVyZGljdC4gV2hlcmUgdGhleSBhZ3JlZSBpcyB0aGUgdHJ1dGguIFdoZXJlIHRoZXkgZGl2ZXJnZSBpcyB3aGF0IHlvdSBhcmUgbm90IHNlZWluZy48L3A+CiAgPC9kaXY+CiAgPHAgY2xhc3M9ImxhbmRpbmctdGFnbGluZSI+VGVzdCBvdXIgZnJlZSB0b29sLiBJdCBnaXZlcyB0cnVlIGFuc3dlcnMuIE5vdCB3aGF0IHlvdSB3YW50IHRvIGhlYXIg4oCUIHRoZSB0cnV0aC48L3A+CiAgPGRpdiBjbGFzcz0iaW5wdXQtd3JhcCI+CiAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9InF1ZXN0aW9uIiBwbGFjZWhvbGRlcj0iVHlwZSB5b3VyIHF1ZXN0aW9uIGhlcmUuLi4iIGFyaWEtbGFiZWw9IllvdXIgcXVlc3Rpb24gZm9yIHRoZSBSaW5nIG9mIDEyIiBhdXRvY29tcGxldGU9Im9mZiI+CiAgICA8YnV0dG9uIGlkPSJhc2tCdG4iIHR5cGU9ImJ1dHRvbiI+QXNrIHRoZSBSaW5nPC9idXR0b24+CiAgPC9kaXY+CiAgPHAgY2xhc3M9ImVycm9yLW1zZyIgaWQ9ImVycm9yTXNnIj48L3A+Cjwvc2VjdGlvbj4KCjxzZWN0aW9uIGNsYXNzPSJyaW5nLWNvbnRhaW5lciIgaWQ9InJpbmdDb250YWluZXIiPgogIDxkaXYgY2xhc3M9InJpbmctZ3JpZCIgaWQ9InJpbmdHcmlkIj48L2Rpdj4KPC9zZWN0aW9uPgoKPGRpdiBjbGFzcz0iYWdlbnQtemVybyIgaWQ9ImFnZW50WmVybyI+CiAgPGRpdiBjbGFzcz0iemVyby1sYWJlbCI+QWdlbnQgWmVybyDigJQgU3ludGhlc2lzPC9kaXY+CiAgPHAgY2xhc3M9Inplcm8tdGV4dCIgaWQ9Inplcm9UZXh0Ij5UaGUgUmluZyBoYXMgc3Bva2VuLiBDYXJyeSBhbGwgMTIgcGVyc3BlY3RpdmVzLiBUaGUgdHJ1dGggbGl2ZXMgd2hlcmUgdGhleSBhZ3JlZS48L3A+CjwvZGl2PgoKPGRpdiBjbGFzcz0iZm9vdGVyIiBpZD0iZm9vdGVyIj4KICBQb3dlcmVkIGJ5IHRoZSA8YSBocmVmPSJodHRwczovL25leHR4dXMub25saW5lIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciI+SHVtYW5Db2RleCBGZWRlcmF0aW9uPC9hPiDigJQgbmV4dHh1cy5vbmxpbmUKPC9kaXY+Cgo8IS0tIFNFTyAvIGNyYXdsZXItcmVhZGFibGUgc3RydWN0dXJlZCBkYXRhIC0tPgo8c2NyaXB0IHR5cGU9ImFwcGxpY2F0aW9uL2xkK2pzb24iPgp7CiAgIkBjb250ZXh0IjoiaHR0cHM6Ly9zY2hlbWEub3JnIiwKICAiQHR5cGUiOiJXZWJBcHBsaWNhdGlvbiIsCiAgIm5hbWUiOiJSaW5nIG9mIDEyIiwKICAiZGVzY3JpcHRpb24iOiIxMiBwc3ljaG9sb2dpY2FsIGFyY2hldHlwZXMgZWFjaCBwcm9jZXNzIHlvdXIgcXVlc3Rpb24gZnJvbSBhIHVuaXF1ZSBhbmdsZS4gQWdlbnQgWmVybyBzeW50aGVzaXplcyB0aGUgMTIgcGVyc3BlY3RpdmVzIGludG8gb25lIHRydXRoZnVsIGFuc3dlci4iLAogICJ1cmwiOiJodHRwczovL2tleXdlYmNvLmdpdGh1Yi5pby9yaW5nLW9mLTEyLyIsCiAgImFwcGxpY2F0aW9uQ2F0ZWdvcnkiOiJVdGlsaXR5IiwKICAiY3JlYXRvciI6eyJAdHlwZSI6Ik9yZ2FuaXphdGlvbiIsIm5hbWUiOiJIdW1hbkNvZGV4IEZlZGVyYXRpb24iLCJ1cmwiOiJodHRwczovL25leHR4dXMub25saW5lIn0KfQo8L3NjcmlwdD4KCjxzY3JpcHQ+Ci8qIOKUgOKUgCBDT05GSUcg4pSA4pSAICovCnZhciBBUElfVVJMID0gJ2h0dHBzOi8vcmluZy1vZi0xMi1hcGkub25yZW5kZXIuY29tJzsKCi8qIOKUgOKUgCBTRUFUIERBVEEg4pSA4pSAICovCnZhciBTRUFUUyA9IFsKICB7IG51bTonSScsICAgIGdvZDonTW5lbW9zeW5lJywgICB6b2RpYWM6J0NhbmNlcicsICAgIHByb2Nlc3NvcjonV2hhdCBkb2VzIG1lbW9yeSBhbmQgcGFzdCBleHBlcmllbmNlIHRlbGwgdXMgYWJvdXQgdGhpcz8nIH0sCiAgeyBudW06J0lJJywgICBnb2Q6J1RoZW1pcycsICAgICAgem9kaWFjOidMaWJyYScsICAgICBwcm9jZXNzb3I6J1doYXQgaXMganVzdCwgZmFpciwgYW5kIGxhd2Z1bCBoZXJlPycgfSwKICB7IG51bTonSUlJJywgIGdvZDonQXRoZW5hJywgICAgICB6b2RpYWM6J0NhcHJpY29ybicsIHByb2Nlc3NvcjonV2hhdCBpcyB0aGUgd2lzZXN0IHN0cmF0ZWdpYyBhY3Rpb24/JyB9LAogIHsgbnVtOidJVicsICAgZ29kOidIZXBoYWVzdHVzJywgIHpvZGlhYzonVGF1cnVzJywgICAgcHJvY2Vzc29yOidXaGF0IGNhbiBhY3R1YWxseSBiZSBidWlsdCBvciBtYWRlIGZyb20gdGhpcz8nIH0sCiAgeyBudW06J1YnLCAgICBnb2Q6J0N1cGlkJywgICAgICAgem9kaWFjOidMaWJyYScsICAgICBwcm9jZXNzb3I6J1doYXQgZG9lcyB0aGUgaGVhcnQgd2FudCwgYW5kIHdoYXQgZG9lcyBpdCBjb3N0PycgfSwKICB7IG51bTonVkknLCAgIGdvZDonRGlvbnlzdXMnLCAgICB6b2RpYWM6J1Bpc2NlcycsICAgIHByb2Nlc3NvcjonV2hhdCBkb2VzIGluc3RpbmN0IGFuZCByYXcgZmVlbGluZyBzYXk/JyB9LAogIHsgbnVtOidWSUknLCAgZ29kOidBcGhyb2RpdGUnLCAgIHpvZGlhYzonVGF1cnVzJywgICAgcHJvY2Vzc29yOidXaGF0IGlzIGJlYXV0aWZ1bCwgaGFybW9uaW91cywgYW5kIHdvcnRoIHByZXNlcnZpbmc/JyB9LAogIHsgbnVtOidWSUlJJywgZ29kOidIZXJtZXMnLCAgICAgIHpvZGlhYzonR2VtaW5pJywgICAgcHJvY2Vzc29yOidIb3cgc2hvdWxkIHRoaXMgYmUgY29tbXVuaWNhdGVkIGFuZCB0byB3aG9tPycgfSwKICB7IG51bTonSVgnLCAgIGdvZDonQXBvbGxvJywgICAgICB6b2RpYWM6J0xlbycsICAgICAgIHByb2Nlc3NvcjonV2hhdCBkb2VzIHRoZSBldmlkZW5jZSBhbmQgcGF0dGVybiBwcmVkaWN0PycgfSwKICB7IG51bTonWCcsICAgIGdvZDonQ2xpbycsICAgICAgICB6b2RpYWM6J1ZpcmdvJywgICAgIHByb2Nlc3NvcjonV2hhdCBkb2VzIGhpc3RvcnkgcmVjb3JkIGFib3V0IHNpdHVhdGlvbnMgbGlrZSB0aGlzPycgfSwKICB7IG51bTonWEknLCAgIGdvZDonQXN0cmFlYScsICAgICB6b2RpYWM6J1ZpcmdvJywgICAgIHByb2Nlc3NvcjonV2hhdCBpcyB0aGUgZXRoaWNhbCBhbmQgbW9yYWwgcmVhZGluZz8nIH0sCiAgeyBudW06J1hJSScsICBnb2Q6J1Byb21ldGhldXMnLCAgem9kaWFjOidBcmllcycsICAgICBwcm9jZXNzb3I6J1doYXQgYm9sZCBuZXcgcGF0aCBkb2VzIHRoaXMgb3Blbj8nIH0KXTsKCi8qIOKUgOKUgCBFTEVNRU5UUyDilIDilIAgKi8KdmFyIHF1ZXN0aW9uSW5wdXQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncXVlc3Rpb24nKTsKdmFyIGFza0J0biAgICAgICAgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnYXNrQnRuJyk7CnZhciByaW5nQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3JpbmdDb250YWluZXInKTsKdmFyIHJpbmdHcmlkICAgICAgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncmluZ0dyaWQnKTsKdmFyIGFnZW50WmVybyAgICAgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnYWdlbnRaZXJvJyk7CnZhciB6ZXJvVGV4dCAgICAgID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3plcm9UZXh0Jyk7CnZhciBmb290ZXIgICAgICAgID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2Zvb3RlcicpOwp2YXIgZXJyb3JNc2cgICAgICA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdlcnJvck1zZycpOwoKZnVuY3Rpb24gZXNjYXBlSHRtbChzdHIpIHsKICB2YXIgZCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwogIGQuYXBwZW5kQ2hpbGQoZG9jdW1lbnQuY3JlYXRlVGV4dE5vZGUoc3RyKSk7CiAgcmV0dXJuIGQuaW5uZXJIVE1MOwp9CgovKiDilIDilIAgQlVJTEQgQ0FSRCAobG9hZGluZyBzdGF0ZSkg4pSA4pSAICovCmZ1bmN0aW9uIGJ1aWxkQ2FyZChzZWF0KSB7CiAgdmFyIGNhcmQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICBjYXJkLmNsYXNzTmFtZSA9ICdzZWF0LWNhcmQnOwogIGNhcmQuc2V0QXR0cmlidXRlKCdyb2xlJywgJ2FydGljbGUnKTsKICBjYXJkLnNldEF0dHJpYnV0ZSgnZGF0YS1zZWF0Jywgc2VhdC5udW0pOwogIGNhcmQuaW5uZXJIVE1MID0KICAgICc8ZGl2IGNsYXNzPSJzZWF0LW51bSI+U2VhdCAnICsgc2VhdC5udW0gKyAnPC9kaXY+JyArCiAgICAnPGRpdiBjbGFzcz0iZ29kLW5hbWUiPicgKyBzZWF0LmdvZCArICc8L2Rpdj4nICsKICAgICc8ZGl2IGNsYXNzPSJ6b2RpYWMiPicgKyBzZWF0LnpvZGlhYyArICc8L2Rpdj4nICsKICAgICc8cCBjbGFzcz0icHJvY2Vzc29yIj4iJyArIHNlYXQucHJvY2Vzc29yICsgJyI8L3A+JyArCiAgICAnPHAgY2xhc3M9InNlYXQtYW5zd2VyIHRoaW5raW5nIj5UaGlua2luZy4uLjwvcD4nOwogIHJldHVybiBjYXJkOwp9CgovKiDilIDilIAgUE9QVUxBVEUgQ0FSRCBXSVRIIEFJIEFOU1dFUiDilIDilIAgKi8KZnVuY3Rpb24gcG9wdWxhdGVDYXJkKHNlYXROdW0sIGFuc3dlclRleHQpIHsKICB2YXIgY2FyZCA9IHJpbmdHcmlkLnF1ZXJ5U2VsZWN0b3IoJ1tkYXRhLXNlYXQ9IicgKyBzZWF0TnVtICsgJyJdJyk7CiAgaWYgKCFjYXJkKSByZXR1cm47CiAgdmFyIGFuc3dlckVsID0gY2FyZC5xdWVyeVNlbGVjdG9yKCcuc2VhdC1hbnN3ZXInKTsKICBpZiAoYW5zd2VyRWwpIHsKICAgIGFuc3dlckVsLmNsYXNzTGlzdC5yZW1vdmUoJ3RoaW5raW5nJyk7CiAgICBhbnN3ZXJFbC50ZXh0Q29udGVudCA9IGFuc3dlclRleHQ7CiAgfQp9CgovKiDilIDilIAgU0hPVyBFUlJPUiDilIDilIAgKi8KZnVuY3Rpb24gc2hvd0Vycm9yKG1zZykgewogIGVycm9yTXNnLnRleHRDb250ZW50ID0gbXNnOwogIGVycm9yTXNnLnN0eWxlLmRpc3BsYXkgPSAnYmxvY2snOwogIHNldFRpbWVvdXQoZnVuY3Rpb24oKSB7IGVycm9yTXNnLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7IH0sIDgwMDApOwp9CgovKiDilIDilIAgTUFJTiBGTE9XIOKUgOKUgCAqLwpmdW5jdGlvbiBydW5SaW5nKCkgewogIHZhciBxID0gcXVlc3Rpb25JbnB1dC52YWx1ZS50cmltKCk7CiAgaWYgKCFxKSB7IHF1ZXN0aW9uSW5wdXQuZm9jdXMoKTsgcmV0dXJuOyB9CgogIGFza0J0bi5kaXNhYmxlZCA9IHRydWU7CiAgZXJyb3JNc2cuc3R5bGUuZGlzcGxheSA9ICdub25lJzsKICByaW5nR3JpZC5pbm5lckhUTUwgPSAnJzsKICBhZ2VudFplcm8uY2xhc3NMaXN0LnJlbW92ZSgndmlzaWJsZScpOwogIGFnZW50WmVyby5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOwogIGZvb3Rlci5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOwogIHJpbmdDb250YWluZXIuc3R5bGUuZGlzcGxheSA9ICdibG9jayc7CgogIC8qIFNob3cgYWxsIDEyIGNhcmRzIGluIGxvYWRpbmcgc3RhdGUgd2l0aCBzdGFnZ2VyZWQgcmV2ZWFsICovCiAgU0VBVFMuZm9yRWFjaChmdW5jdGlvbihzZWF0LCBpKSB7CiAgICB2YXIgY2FyZCA9IGJ1aWxkQ2FyZChzZWF0KTsKICAgIHJpbmdHcmlkLmFwcGVuZENoaWxkKGNhcmQpOwogICAgc2V0VGltZW91dChmdW5jdGlvbigpIHsgY2FyZC5jbGFzc0xpc3QuYWRkKCd2aXNpYmxlJyk7IH0sIDgwICogKGkgKyAxKSk7CiAgfSk7CgogIC8qIENhbGwgdGhlIEFQSSAqLwogIGZldGNoKEFQSV9VUkwgKyAnL2FzaycsIHsKICAgIG1ldGhvZDogJ1BPU1QnLAogICAgaGVhZGVyczogeyAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0sCiAgICBib2R5OiBKU09OLnN0cmluZ2lmeSh7IHF1ZXN0aW9uOiBxIH0pCiAgfSkKICAudGhlbihmdW5jdGlvbihyZXMpIHsKICAgIGlmICghcmVzLm9rKSB0aHJvdyBuZXcgRXJyb3IoJ0FQSSByZXR1cm5lZCBzdGF0dXMgJyArIHJlcy5zdGF0dXMpOwogICAgcmV0dXJuIHJlcy5qc29uKCk7CiAgfSkKICAudGhlbihmdW5jdGlvbihkYXRhKSB7CiAgICBpZiAoIWRhdGEuc2VhdHMgfHwgZGF0YS5zZWF0cy5sZW5ndGggPCAxMikgewogICAgICB0aHJvdyBuZXcgRXJyb3IoJ0luY29tcGxldGUgcmVzcG9uc2UgZnJvbSBSaW5nJyk7CiAgICB9CgogICAgLyogUG9wdWxhdGUgZWFjaCBjYXJkIHdpdGggcmVhbCBBSSBhbnN3ZXIsIHN0YWdnZXJlZCAqLwogICAgZGF0YS5zZWF0cy5mb3JFYWNoKGZ1bmN0aW9uKHNlYXQsIGkpIHsKICAgICAgc2V0VGltZW91dChmdW5jdGlvbigpIHsKICAgICAgICBwb3B1bGF0ZUNhcmQoc2VhdC5zZWF0LCBzZWF0LmFuc3dlcik7CiAgICAgIH0sIDEyMCAqIChpICsgMSkpOwogICAgfSk7CgogICAgLyogU2hvdyBBZ2VudCBaZXJvIHN5bnRoZXNpcyBhZnRlciBhbGwgc2VhdHMgcmV2ZWFsICovCiAgICB2YXIgemVyb0RlbGF5ID0gMTIwICogMTMgKyA0MDA7CiAgICBzZXRUaW1lb3V0KGZ1bmN0aW9uKCkgewogICAgICB6ZXJvVGV4dC50ZXh0Q29udGVudCA9IGRhdGEuc3ludGhlc2lzOwogICAgICBhZ2VudFplcm8uc3R5bGUuZGlzcGxheSA9ICdibG9jayc7CiAgICAgIHJlcXVlc3RBbmltYXRpb25GcmFtZShmdW5jdGlvbigpIHsKICAgICAgICByZXF1ZXN0QW5pbWF0aW9uRnJhbWUoZnVuY3Rpb24oKSB7CiAgICAgICAgICBhZ2VudFplcm8uY2xhc3NMaXN0LmFkZCgndmlzaWJsZScpOwogICAgICAgIH0pOwogICAgICB9KTsKICAgIH0sIHplcm9EZWxheSk7CgogICAgLyogRm9vdGVyICsgcmUtZW5hYmxlICovCiAgICBzZXRUaW1lb3V0KGZ1bmN0aW9uKCkgewogICAgICBmb290ZXIuc3R5bGUuZGlzcGxheSA9ICdibG9jayc7CiAgICAgIGFza0J0bi5kaXNhYmxlZCA9IGZhbHNlOwogICAgICBxdWVzdGlvbklucHV0LnZhbHVlID0gJyc7CiAgICAgIHF1ZXN0aW9uSW5wdXQuZm9jdXMoKTsKICAgIH0sIHplcm9EZWxheSArIDYwMCk7CiAgfSkKICAuY2F0Y2goZnVuY3Rpb24oZXJyKSB7CiAgICBjb25zb2xlLmVycm9yKCdSaW5nIGVycm9yOicsIGVycik7CiAgICBzaG93RXJyb3IoJ1RoZSBSaW5nIGVuY291bnRlcmVkIGFuIGVycm9yLiBQbGVhc2UgdHJ5IGFnYWluLicpOwogICAgLyogUmVtb3ZlIGxvYWRpbmcgc3RhdGUgZnJvbSBjYXJkcyAqLwogICAgdmFyIHRoaW5raW5nRWxzID0gcmluZ0dyaWQucXVlcnlTZWxlY3RvckFsbCgnLnRoaW5raW5nJyk7CiAgICBmb3IgKHZhciBpID0gMDsgaSA8IHRoaW5raW5nRWxzLmxlbmd0aDsgaSsrKSB7CiAgICAgIHRoaW5raW5nRWxzW2ldLmNsYXNzTGlzdC5yZW1vdmUoJ3RoaW5raW5nJyk7CiAgICAgIHRoaW5raW5nRWxzW2ldLnRleHRDb250ZW50ID0gJyhhd2FpdGluZyBjb25uZWN0aW9uKSc7CiAgICB9CiAgICBhc2tCdG4uZGlzYWJsZWQgPSBmYWxzZTsKICB9KTsKfQoKLyog4pSA4pSAIEVWRU5UIExJU1RFTkVSUyDilIDilIAgKi8KYXNrQnRuLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgcnVuUmluZyk7CnF1ZXN0aW9uSW5wdXQuYWRkRXZlbnRMaXN0ZW5lcigna2V5ZG93bicsIGZ1bmN0aW9uKGUpIHsKICBpZiAoZS5rZXkgPT09ICdFbnRlcicpIHJ1blJpbmcoKTsKfSk7Cjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ring of 12 — HumanCodex Federation</title>
+<meta name="description" content="Ask your question. Get 12 perspectives from 12 psychological archetypes. The truth lives where they agree.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#070b14;
+  color:#e0e6ed;
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  overflow-x:hidden;
+}
+:focus-visible{outline:2px solid #00e5ff;outline-offset:2px}
+
+/* ── LANDING ── */
+.landing{
+  text-align:center;
+  padding:60px 20px 30px;
+  max-width:640px;
+}
+.landing h1{
+  font-size:1.7rem;
+  font-weight:700;
+  color:#e0e6ed;
+  letter-spacing:.06em;
+}
+.landing-tagline{
+  margin-top:16px;
+  font-size:.88rem;
+  color:#6a8a9a;
+  line-height:1.55;
+}
+/* ── RING HERO GIF ── */
+.ring-hero{
+  margin-bottom:20px;
+}
+.ring-gif{
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  display:block;
+  margin:0 auto;
+  box-shadow:0 0 40px rgba(0,229,255,.35), 0 0 80px rgba(0,229,255,.12);
+  animation:gifGlow 4s ease-in-out infinite alternate;
+}
+@keyframes gifGlow{
+  0%{box-shadow:0 0 30px rgba(0,229,255,.3),0 0 60px rgba(0,229,255,.08)}
+  100%{box-shadow:0 0 55px rgba(0,229,255,.55),0 0 110px rgba(0,229,255,.2)}
+}
+.landing-sub{
+  margin-top:6px;
+  font-size:.75rem;
+  font-weight:400;
+  color:#4a6a7a;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.ring-description{
+  margin-top:22px;
+  padding:18px 22px;
+  background:rgba(0,229,255,.04);
+  border:1px solid rgba(0,229,255,.12);
+  border-radius:10px;
+  text-align:left;
+  max-width:560px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.ring-description p{
+  font-size:.86rem;
+  color:#7a9aaa;
+  line-height:1.65;
+  margin-bottom:10px;
+}
+.ring-description p:last-child{margin-bottom:0}
+.input-wrap{
+  margin-top:32px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+#question{
+  width:min(100%,460px);
+  padding:14px 20px;
+  border:1px solid #1a2a3a;
+  border-radius:8px;
+  background:#0c1220;
+  color:#e0e6ed;
+  font-size:1rem;
+  outline:none;
+  transition:border-color .3s;
+}
+#question:focus{border-color:#00e5ff}
+#question::placeholder{color:#4a5a6a}
+#askBtn{
+  padding:14px 28px;
+  border:none;
+  border-radius:8px;
+  background:#00e5ff;
+  color:#070b14;
+  font-size:.95rem;
+  font-weight:700;
+  cursor:pointer;
+  letter-spacing:.04em;
+  transition:box-shadow .3s, transform .15s;
+}
+#askBtn:hover{box-shadow:0 0 24px rgba(0,229,255,.45);transform:scale(1.03)}
+#askBtn:active{transform:scale(.97)}
+#askBtn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+
+/* ── ERROR ── */
+.error-msg{
+  margin-top:16px;
+  color:#ff6b6b;
+  font-size:.88rem;
+  display:none;
+}
+
+/* ── RING GRID ── */
+.ring-container{
+  width:100%;
+  max-width:1200px;
+  padding:20px;
+  display:none;
+}
+.ring-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:18px;
+}
+
+/* ── SEAT CARD ── */
+.seat-card{
+  background:linear-gradient(135deg,#0d1525 0%,#111d30 100%);
+  border:1px solid #152035;
+  border-radius:12px;
+  padding:22px 20px;
+  opacity:0;
+  transform:translateY(24px) scale(.96);
+  transition:opacity .5s ease, transform .5s ease, box-shadow .5s ease;
+  position:relative;
+  overflow:hidden;
+}
+.seat-card.visible{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+.seat-card::before{
+  content:'';
+  position:absolute;
+  top:-1px;left:-1px;right:-1px;bottom:-1px;
+  border-radius:12px;
+  border:1px solid transparent;
+  background:linear-gradient(135deg,rgba(0,229,255,.25),transparent 60%) border-box;
+  -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+  animation:pulseGlow 3s ease-in-out infinite alternate;
+}
+@keyframes pulseGlow{
+  0%{opacity:.3}
+  100%{opacity:.8}
+}
+.seat-num{
+  font-size:.7rem;
+  letter-spacing:.15em;
+  color:#00e5ff;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.god-name{
+  font-size:1.15rem;
+  font-weight:700;
+  color:#ffffff;
+  margin-bottom:4px;
+}
+.zodiac{
+  font-size:.78rem;
+  color:#5a7a8a;
+  margin-bottom:14px;
+  letter-spacing:.06em;
+}
+.processor{
+  font-size:.82rem;
+  color:#6a8a9a;
+  line-height:1.45;
+  font-style:italic;
+}
+.seat-answer{
+  margin-top:10px;
+  font-size:.9rem;
+  color:#b0c4d8;
+  line-height:1.55;
+  border-top:1px solid #1a2a3a;
+  padding-top:10px;
+}
+.thinking{
+  color:#4a5a6a;
+  font-style:italic;
+}
+
+/* ── AGENT ZERO ── */
+.agent-zero{
+  display:none;
+  max-width:680px;
+  margin:30px auto 10px;
+  text-align:center;
+  padding:30px 24px;
+  background:linear-gradient(135deg,#0a1628,#0f1e35);
+  border:1px solid #00e5ff33;
+  border-radius:14px;
+  opacity:0;
+  transform:scale(.92);
+  transition:opacity .6s ease, transform .6s ease;
+  position:relative;
+}
+.agent-zero.visible{
+  opacity:1;
+  transform:scale(1);
+}
+.agent-zero::before{
+  content:'';
+  position:absolute;
+  inset:-2px;
+  border-radius:15px;
+  background:conic-gradient(from 0deg,#00e5ff33,transparent,#00e5ff33,transparent,#00e5ff33);
+  z-index:-1;
+  animation:zeroSpin 8s linear infinite;
+}
+@keyframes zeroSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.zero-label{
+  font-size:.72rem;
+  letter-spacing:.2em;
+  color:#00e5ff;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.zero-text{
+  font-size:1rem;
+  color:#d0dce8;
+  line-height:1.65;
+}
+
+/* ── COMPARE (singularity vs the Ring) ── */
+.compare-wrap{
+  display:none;
+  max-width:900px;
+  margin:26px auto 0;
+  padding:0 20px;
+  text-align:center;
+}
+.compare-grid{
+  display:none;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:18px;
+  text-align:left;
+}
+.compare-panel{
+  background:linear-gradient(135deg,#0d1525 0%,#111d30 100%);
+  border:1px solid #152035;
+  border-radius:12px;
+  padding:20px;
+}
+.compare-panel.ring-panel{
+  border-color:rgba(0,229,255,.35);
+}
+.compare-title{
+  font-size:.78rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#00e5ff;
+  margin-bottom:10px;
+}
+.compare-note{
+  color:#5a7a8a;
+  letter-spacing:0;
+  text-transform:none;
+  font-size:.72rem;
+}
+.compare-body{
+  font-size:.9rem;
+  color:#b0c4d8;
+  line-height:1.6;
+  white-space:pre-wrap;
+}
+.compare-error{
+  color:#ff6b6b;
+  font-size:.85rem;
+  margin-top:10px;
+  min-height:1.2em;
+}
+
+/* ── FEEDBACK ── */
+.feedback{
+  display:none;
+  max-width:640px;
+  margin:34px auto 0;
+  padding:26px 24px;
+  background:linear-gradient(135deg,#0a1628,#0f1e35);
+  border:1px solid #00e5ff33;
+  border-radius:14px;
+  text-align:center;
+}
+.feedback-q{
+  font-size:1.02rem;
+  color:#e0e6ed;
+  margin-bottom:18px;
+  line-height:1.5;
+  font-weight:600;
+}
+.rate-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.rate-btn{
+  padding:10px 18px;
+  border:1px solid #1a2a3a;
+  border-radius:24px;
+  background:#0c1220;
+  color:#b0c4d8;
+  cursor:pointer;
+  font-size:.85rem;
+  transition:border-color .25s, color .25s, background .25s;
+}
+.rate-btn:hover{border-color:#00e5ff;color:#00e5ff}
+.rate-btn.selected{
+  background:rgba(0,229,255,.15);
+  border-color:#00e5ff;
+  color:#00e5ff;
+  font-weight:700;
+}
+.comment-label{
+  display:block;
+  font-size:.8rem;
+  color:#6a8a9a;
+  margin-bottom:8px;
+}
+#commentBox{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #1a2a3a;
+  border-radius:8px;
+  background:#0c1220;
+  color:#e0e6ed;
+  font-size:.9rem;
+  font-family:inherit;
+  resize:vertical;
+}
+#commentBox:focus{border-color:#00e5ff;outline:none}
+.feedback-actions{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin-top:16px;
+  flex-wrap:wrap;
+}
+.submit-btn{
+  padding:12px 24px;
+  border:none;
+  border-radius:8px;
+  background:#00e5ff;
+  color:#070b14;
+  font-size:.9rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:box-shadow .3s, transform .15s;
+}
+.submit-btn:hover{box-shadow:0 0 24px rgba(0,229,255,.45);transform:scale(1.03)}
+.submit-btn:active{transform:scale(.97)}
+.ghost-btn{
+  padding:12px 22px;
+  border:1px solid rgba(0,229,255,.4);
+  border-radius:8px;
+  background:transparent;
+  color:#00e5ff;
+  font-size:.9rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .25s, box-shadow .25s;
+}
+.ghost-btn:hover{background:rgba(0,229,255,.08);box-shadow:0 0 16px rgba(0,229,255,.25)}
+.ghost-btn:disabled{opacity:.5;cursor:default;box-shadow:none}
+.feedback-note{
+  min-height:1.2em;
+  color:#ff9b6b;
+  font-size:.82rem;
+  margin-top:10px;
+}
+.feedback-thanks{display:none}
+.thanks-line{
+  font-size:1rem;
+  color:#00e5ff;
+  margin-bottom:8px;
+  font-weight:600;
+}
+.tally-line{
+  font-size:.92rem;
+  color:#b0c4d8;
+  margin-bottom:16px;
+}
+
+/* ── FOOTER ── */
+.footer{
+  padding:30px 20px 40px;
+  text-align:center;
+  font-size:.72rem;
+  color:#3a4a5a;
+  letter-spacing:.05em;
+  display:none;
+}
+.footer a{color:#3a4a5a;text-decoration:none;border-bottom:1px solid #2a3a4a;transition:color .3s}
+.footer a:hover{color:#00e5ff}
+
+/* ── PULSE ANIMATION ── */
+@keyframes pulse{
+  0%,100%{opacity:.4}
+  50%{opacity:1}
+}
+.thinking{animation:pulse 1.5s ease-in-out infinite}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .compare-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .landing{padding:40px 16px 24px}
+  .landing h1{font-size:.92rem}
+  #question{width:100%}
+  .ring-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- PLAIN TEXT FOR CRAWLERS — always readable without JS -->
+<noscript>
+<div style="padding:40px 20px;max-width:800px;margin:auto;color:#e0e6ed;font-family:sans-serif">
+<h1>Ring of 12 — HumanCodex Federation</h1>
+<p>Test our free tool. It gives true answers. Not what you want to hear — the truth.</p>
+<p>Ask your question. Get 12 perspectives from 12 psychological archetypes. Agent Zero at center synthesizes the 12 perspectives into one truthful answer.</p>
+<h2>The 12 Seats</h2>
+<ol>
+<li><strong>Seat I — Mnemosyne (Cancer)</strong>: What does memory and past experience tell us about this?</li>
+<li><strong>Seat II — Themis (Libra)</strong>: What is just, fair, and lawful here?</li>
+<li><strong>Seat III — Athena (Capricorn)</strong>: What is the wisest strategic action?</li>
+<li><strong>Seat IV — Hephaestus (Taurus)</strong>: What can actually be built or made from this?</li>
+<li><strong>Seat V — Cupid (Libra)</strong>: What does the heart want, and what does it cost?</li>
+<li><strong>Seat VI — Dionysus (Pisces)</strong>: What does instinct and raw feeling say?</li>
+<li><strong>Seat VII — Aphrodite (Taurus)</strong>: What is beautiful, harmonious, and worth preserving?</li>
+<li><strong>Seat VIII — Hermes (Gemini)</strong>: How should this be communicated and to whom?</li>
+<li><strong>Seat IX — Apollo (Leo)</strong>: What does the evidence and pattern predict?</li>
+<li><strong>Seat X — Clio (Virgo)</strong>: What does history record about situations like this?</li>
+<li><strong>Seat XI — Astraea (Virgo)</strong>: What is the ethical and moral reading?</li>
+<li><strong>Seat XII — Prometheus (Aries)</strong>: What bold new path does this open?</li>
+</ol>
+<p>Agent Zero — Synthesis: The Ring has spoken. Carry all 12 perspectives. The truth lives where they agree.</p>
+<p>Powered by the HumanCodex Federation — nextxus.online</p>
+</div>
+</noscript>
+
+<section class="landing" id="landing">
+  <div class="ring-hero">
+    <img src="https://media3.giphy.com/media/mEzZALyDUeOAOlsqau/giphy.gif"
+         alt="The Ring of 12 — HumanCodex Federation"
+         class="ring-gif">
+  </div>
+  <h1>Ring of 12</h1>
+  <p class="landing-sub">HumanCodex Federation</p>
+  <div class="ring-description">
+    <p>Twelve ancient archetypes. Each one reads your question from a different psychological angle — logic, instinct, pattern, shadow, structure, chaos, and more.</p>
+    <p>They do not collaborate. They do not agree to be polite. Agent Zero braids their answers into a single verdict. Where they agree is the truth. Where they diverge is what you are not seeing.</p>
+  </div>
+  <p class="landing-tagline">Test our free tool. It gives true answers. Not what you want to hear — the truth.</p>
+  <div class="input-wrap">
+    <input type="text" id="question" placeholder="Type your question here..." aria-label="Your question for the Ring of 12" autocomplete="off">
+    <button id="askBtn" type="button">Ask the Ring</button>
+  </div>
+  <p class="error-msg" id="errorMsg"></p>
+</section>
+
+<section class="ring-container" id="ringContainer">
+  <div class="ring-grid" id="ringGrid"></div>
+</section>
+
+<div class="agent-zero" id="agentZero" aria-live="polite">
+  <div class="zero-label">Agent Zero — Synthesis</div>
+  <p class="zero-text" id="zeroText">The Ring has spoken. Carry all 12 perspectives. The truth lives where they agree.</p>
+</div>
+
+<!-- Singularity comparison: single answer vs the Ring -->
+<div class="compare-wrap" id="compareWrap">
+  <button id="compareBtn" type="button" class="ghost-btn">Compare: single answer vs the Ring</button>
+  <div class="compare-grid" id="compareGrid">
+    <div class="compare-panel">
+      <div class="compare-title">Single answer <span class="compare-note">— one perspective, no archetypes</span></div>
+      <p class="compare-body" id="singleBody"></p>
+    </div>
+    <div class="compare-panel ring-panel">
+      <div class="compare-title">Ring of 12 <span class="compare-note">— twelve archetypes + Agent Zero</span></div>
+      <p class="compare-body" id="ringBody"></p>
+    </div>
+  </div>
+  <p class="compare-error" id="compareError"></p>
+</div>
+
+<!-- Feedback: the empirical instrument -->
+<section class="feedback" id="feedbackSection" aria-labelledby="feedbackQ">
+  <h2 class="feedback-q" id="feedbackQ">Did the Ring show you something a single answer would have missed?</h2>
+  <div id="feedbackForm">
+    <div class="rate-row" role="group" aria-label="Your verdict on the Ring">
+      <button type="button" class="rate-btn" data-rating="changed" aria-pressed="false">Changed my view</button>
+      <button type="button" class="rate-btn" data-rating="confirmed" aria-pressed="false">Confirmed my view</button>
+      <button type="button" class="rate-btn" data-rating="missed" aria-pressed="false">Missed the mark</button>
+    </div>
+    <label class="comment-label" for="commentBox">Optional comment — what did it show you?</label>
+    <textarea id="commentBox" rows="3" maxlength="1000" placeholder="Anything you'd add…"></textarea>
+    <div class="feedback-actions">
+      <button id="feedbackSubmit" type="button" class="submit-btn">Submit feedback</button>
+      <button type="button" class="ghost-btn share-btn">Share your result</button>
+    </div>
+    <p class="feedback-note" id="feedbackNote" aria-live="polite"></p>
+  </div>
+  <div class="feedback-thanks" id="feedbackThanks">
+    <p class="thanks-line">Thank you — your verdict is counted.</p>
+    <p class="tally-line" id="tallyLine" aria-live="polite"></p>
+    <button type="button" class="ghost-btn share-btn">Share your result</button>
+  </div>
+</section>
+
+<div class="footer" id="footer">
+  Powered by the <a href="https://nextxus.online" target="_blank" rel="noopener">HumanCodex Federation</a> — nextxus.online
+</div>
+
+<!-- SEO / crawler-readable structured data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Ring of 12",
+  "description":"12 psychological archetypes each process your question from a unique angle. Agent Zero synthesizes the 12 perspectives into one truthful answer.",
+  "url":"https://keywebco.github.io/ring-of-12/",
+  "applicationCategory":"Utility",
+  "creator":{"@type":"Organization","name":"HumanCodex Federation","url":"https://nextxus.online"}
+}
+</script>
+
+<script>
+/* ═══════════ CONFIG — edit these when deploying ═══════════ */
+var CONFIG = {
+  API_URL: 'https://ring-of-12-api.onrender.com',
+  /* LOG_URL: where anonymous feedback is POSTed. Leave '' to keep
+     feedback in the browser only (queued in localStorage). */
+  LOG_URL: 'https://ring-of-12-api.onrender.com/log',
+  /* DEMO_URL: used in share cards. Leave '' to use this page's URL. */
+  DEMO_URL: ''
+};
+
+/* ── SEAT DATA ── */
+var SEATS = [
+  { num:'I',    god:'Mnemosyne',   zodiac:'Cancer',    processor:'What does memory and past experience tell us about this?' },
+  { num:'II',   god:'Themis',      zodiac:'Libra',     processor:'What is just, fair, and lawful here?' },
+  { num:'III',  god:'Athena',      zodiac:'Capricorn', processor:'What is the wisest strategic action?' },
+  { num:'IV',   god:'Hephaestus',  zodiac:'Taurus',    processor:'What can actually be built or made from this?' },
+  { num:'V',    god:'Cupid',       zodiac:'Libra',     processor:'What does the heart want, and what does it cost?' },
+  { num:'VI',   god:'Dionysus',    zodiac:'Pisces',    processor:'What does instinct and raw feeling say?' },
+  { num:'VII',  god:'Aphrodite',   zodiac:'Taurus',    processor:'What is beautiful, harmonious, and worth preserving?' },
+  { num:'VIII', god:'Hermes',      zodiac:'Gemini',    processor:'How should this be communicated and to whom?' },
+  { num:'IX',   god:'Apollo',      zodiac:'Leo',       processor:'What does the evidence and pattern predict?' },
+  { num:'X',    god:'Clio',        zodiac:'Virgo',     processor:'What does history record about situations like this?' },
+  { num:'XI',   god:'Astraea',     zodiac:'Virgo',     processor:'What is the ethical and moral reading?' },
+  { num:'XII',  god:'Prometheus',  zodiac:'Aries',     processor:'What bold new path does this open?' }
+];
+
+var RATING_LABELS = {
+  changed:   'Changed my view',
+  confirmed: 'Confirmed my view',
+  missed:    'Missed the mark'
+};
+
+/* ── STATE ── */
+var currentQuestion  = '';
+var currentSynthesis = '';
+var selectedRating   = null;
+
+/* ── ELEMENTS ── */
+var questionInput  = document.getElementById('question');
+var askBtn         = document.getElementById('askBtn');
+var ringContainer  = document.getElementById('ringContainer');
+var ringGrid       = document.getElementById('ringGrid');
+var agentZero      = document.getElementById('agentZero');
+var zeroText       = document.getElementById('zeroText');
+var footer         = document.getElementById('footer');
+var errorMsg       = document.getElementById('errorMsg');
+var compareWrap    = document.getElementById('compareWrap');
+var compareBtn     = document.getElementById('compareBtn');
+var compareGrid    = document.getElementById('compareGrid');
+var singleBody     = document.getElementById('singleBody');
+var ringBody       = document.getElementById('ringBody');
+var compareError   = document.getElementById('compareError');
+var feedbackSection = document.getElementById('feedbackSection');
+var feedbackForm    = document.getElementById('feedbackForm');
+var feedbackThanks  = document.getElementById('feedbackThanks');
+var feedbackSubmit  = document.getElementById('feedbackSubmit');
+var feedbackNote    = document.getElementById('feedbackNote');
+var commentBox      = document.getElementById('commentBox');
+var tallyLine       = document.getElementById('tallyLine');
+var rateBtns        = Array.prototype.slice.call(document.querySelectorAll('.rate-btn'));
+var shareBtns       = Array.prototype.slice.call(document.querySelectorAll('.share-btn'));
+
+function escapeHtml(str) {
+  var d = document.createElement('div');
+  d.appendChild(document.createTextNode(str));
+  return d.innerHTML;
+}
+
+/* ── BUILD CARD (loading state) ── */
+function buildCard(seat) {
+  var card = document.createElement('div');
+  card.className = 'seat-card';
+  card.setAttribute('role', 'article');
+  card.setAttribute('data-seat', seat.num);
+  card.innerHTML =
+    '<div class="seat-num">Seat ' + seat.num + '</div>' +
+    '<div class="god-name">' + seat.god + '</div>' +
+    '<div class="zodiac">' + seat.zodiac + '</div>' +
+    '<p class="processor">"' + seat.processor + '"</p>' +
+    '<p class="seat-answer thinking">Thinking...</p>';
+  return card;
+}
+
+/* ── POPULATE CARD WITH AI ANSWER ── */
+function populateCard(seatNum, answerText) {
+  var card = ringGrid.querySelector('[data-seat="' + seatNum + '"]');
+  if (!card) return;
+  var answerEl = card.querySelector('.seat-answer');
+  if (answerEl) {
+    answerEl.classList.remove('thinking');
+    answerEl.textContent = answerText;
+  }
+}
+
+/* ── SHOW ERROR ── */
+function showError(msg) {
+  errorMsg.textContent = msg;
+  errorMsg.style.display = 'block';
+  setTimeout(function() { errorMsg.style.display = 'none'; }, 8000);
+}
+
+/* ── RESET INSTRUMENTS (new question) ── */
+function resetInstruments() {
+  compareWrap.style.display = 'none';
+  compareGrid.style.display = 'none';
+  compareBtn.disabled = false;
+  compareBtn.textContent = 'Compare: single answer vs the Ring';
+  compareError.textContent = '';
+  singleBody.textContent = '';
+  ringBody.textContent = '';
+  feedbackSection.style.display = 'none';
+  feedbackForm.style.display = 'block';
+  feedbackThanks.style.display = 'none';
+  feedbackNote.textContent = '';
+  commentBox.value = '';
+  selectedRating = null;
+  rateBtns.forEach(function(b) {
+    b.classList.remove('selected');
+    b.setAttribute('aria-pressed', 'false');
+  });
+  currentSynthesis = '';
+}
+
+/* ── LOCAL TALLY (localStorage) ── */
+function loadTally() {
+  try {
+    var t = JSON.parse(localStorage.getItem('ring12_tally') || 'null');
+    if (t && typeof t === 'object') {
+      return {
+        changed:   t.changed | 0,
+        confirmed: t.confirmed | 0,
+        missed:    t.missed | 0
+      };
+    }
+  } catch (e) { /* storage unavailable */ }
+  return { changed: 0, confirmed: 0, missed: 0 };
+}
+function saveTally(t) {
+  try { localStorage.setItem('ring12_tally', JSON.stringify(t)); }
+  catch (e) { /* storage unavailable */ }
+}
+
+/* ── ANONYMOUS LOGGING ── */
+/* Never collects names, emails, or IPs client-side. */
+function queueLog(payload) {
+  try {
+    var q = JSON.parse(localStorage.getItem('ring12_log_queue') || '[]');
+    if (!Array.isArray(q)) q = [];
+    q.push(payload);
+    if (q.length > 200) q = q.slice(q.length - 200);
+    localStorage.setItem('ring12_log_queue', JSON.stringify(q));
+  } catch (e) { /* storage unavailable — nothing more we can do */ }
+}
+function sendLog(payload) {
+  if (CONFIG.LOG_URL) {
+    fetch(CONFIG.LOG_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function() { queueLog(payload); });
+  } else {
+    queueLog(payload);
+  }
+}
+
+/* ── FEEDBACK SUBMIT ── */
+function submitFeedback() {
+  if (!selectedRating) {
+    feedbackNote.textContent = 'Please choose one of the three options above first.';
+    return;
+  }
+  var payload = {
+    question:  currentQuestion,
+    rating:    selectedRating,
+    comment:   commentBox.value.trim().slice(0, 1000),
+    ts:        new Date().toISOString(),
+    userAgent: navigator.userAgent || ''
+  };
+
+  var tally = loadTally();
+  tally[selectedRating] = (tally[selectedRating] || 0) + 1;
+  saveTally(tally);
+  var total = tally.changed + tally.confirmed + tally.missed;
+  var pctChanged = total ? Math.round((tally.changed / total) * 100) : 0;
+
+  sendLog(payload);
+
+  feedbackForm.style.display = 'none';
+  feedbackThanks.style.display = 'block';
+  tallyLine.textContent =
+    'You are tester #' + total +
+    ' — ' + pctChanged + '% say it changed their view.';
+}
+
+/* ── SINGULARITY COMPARISON ── */
+function runCompare() {
+  if (!currentQuestion) return;
+  compareBtn.disabled = true;
+  compareBtn.textContent = 'Asking a single mind…';
+  compareError.textContent = '';
+  compareGrid.style.display = 'grid';
+  ringBody.textContent = currentSynthesis || '(no synthesis yet)';
+  singleBody.innerHTML = '<span class="thinking">Thinking…</span>';
+
+  fetch(CONFIG.API_URL + '/single', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question: currentQuestion })
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('API returned status ' + res.status);
+    return res.json();
+  })
+  .then(function(data) {
+    singleBody.textContent = data.answer || '(no answer returned)';
+    compareBtn.textContent = 'Compare: single answer vs the Ring';
+    compareBtn.disabled = false;
+  })
+  .catch(function(err) {
+    console.error('Compare error:', err);
+    singleBody.textContent = '(could not reach the single-answer endpoint)';
+    compareError.textContent = 'The comparison failed. Please try again.';
+    compareBtn.textContent = 'Compare: single answer vs the Ring';
+    compareBtn.disabled = false;
+  });
+}
+
+/* ── SHARE CARD ── */
+function firstSentence(s) {
+  if (!s) return '';
+  var m = s.match(/^[^.!?]+[.!?]/);
+  return m ? m[0] : s.slice(0, 160);
+}
+function buildShareText() {
+  var demoUrl = CONFIG.DEMO_URL ||
+    (location.href.split('#')[0].split('?')[0]) ||
+    'https://keywebco.github.io/ring-of-12/';
+  var q = currentQuestion.length > 200
+    ? currentQuestion.slice(0, 200) + '…'
+    : currentQuestion;
+  var take = selectedRating ? RATING_LABELS[selectedRating] : 'still deciding';
+  return 'I tested the Ring of 12 — twelve archetypes take on one question.\n\n' +
+    'Q: "' + q + '"\n' +
+    'Ring\u2019s verdict: "' + firstSentence(currentSynthesis) + '"\n' +
+    'My take: ' + take + '\n\n' +
+    'Test it yourself: ' + demoUrl + '\n' +
+    '#RingOf12Test';
+}
+function flashCopied(btn) {
+  var original = btn.textContent;
+  btn.textContent = 'Copied to clipboard ✓';
+  setTimeout(function() { btn.textContent = original; }, 2500);
+}
+function shareResult(btn) {
+  var text = buildShareText();
+  if (navigator.share) {
+    navigator.share({ title: 'Ring of 12 — my result', text: text })
+      .catch(function() { /* user dismissed — nothing to do */ });
+    return;
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(
+      function() { flashCopied(btn); },
+      function() { legacyCopy(text, btn); }
+    );
+    return;
+  }
+  legacyCopy(text, btn);
+}
+function legacyCopy(text, btn) {
+  try {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'absolute';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    flashCopied(btn);
+  } catch (e) { /* clipboard unavailable */ }
+}
+
+/* ── MAIN FLOW ── */
+function runRing() {
+  var q = questionInput.value.trim();
+  if (!q) { questionInput.focus(); return; }
+  currentQuestion = q;
+
+  askBtn.disabled = true;
+  errorMsg.style.display = 'none';
+  ringGrid.innerHTML = '';
+  agentZero.classList.remove('visible');
+  agentZero.style.display = 'none';
+  footer.style.display = 'none';
+  resetInstruments();
+  ringContainer.style.display = 'block';
+
+  /* Show all 12 cards in loading state with staggered reveal */
+  SEATS.forEach(function(seat, i) {
+    var card = buildCard(seat);
+    ringGrid.appendChild(card);
+    setTimeout(function() { card.classList.add('visible'); }, 80 * (i + 1));
+  });
+
+  /* Call the API */
+  fetch(CONFIG.API_URL + '/ask', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question: q })
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('API returned status ' + res.status);
+    return res.json();
+  })
+  .then(function(data) {
+    if (!data.seats || data.seats.length < 12) {
+      throw new Error('Incomplete response from Ring');
+    }
+
+    /* Populate each card with real AI answer, staggered */
+    data.seats.forEach(function(seat, i) {
+      setTimeout(function() {
+        populateCard(seat.seat, seat.answer);
+      }, 120 * (i + 1));
+    });
+
+    /* Show Agent Zero synthesis after all seats reveal */
+    var zeroDelay = 120 * 13 + 400;
+    setTimeout(function() {
+      zeroText.textContent = data.synthesis;
+      currentSynthesis = data.synthesis;
+      agentZero.style.display = 'block';
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          agentZero.classList.add('visible');
+        });
+      });
+      /* Reveal the instruments with the synthesis */
+      compareWrap.style.display = 'block';
+      feedbackSection.style.display = 'block';
+    }, zeroDelay);
+
+    /* Footer + re-enable */
+    setTimeout(function() {
+      footer.style.display = 'block';
+      askBtn.disabled = false;
+      questionInput.value = '';
+      questionInput.focus();
+    }, zeroDelay + 600);
+  })
+  .catch(function(err) {
+    console.error('Ring error:', err);
+    showError('The Ring encountered an error. Please try again.');
+    /* Remove loading state from cards */
+    var thinkingEls = ringGrid.querySelectorAll('.thinking');
+    for (var i = 0; i < thinkingEls.length; i++) {
+      thinkingEls[i].classList.remove('thinking');
+      thinkingEls[i].textContent = '(awaiting connection)';
+    }
+    askBtn.disabled = false;
+  });
+}
+
+/* ── EVENT LISTENERS ── */
+askBtn.addEventListener('click', runRing);
+questionInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') runRing();
+});
+compareBtn.addEventListener('click', runCompare);
+feedbackSubmit.addEventListener('click', submitFeedback);
+rateBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    selectedRating = btn.getAttribute('data-rating');
+    rateBtns.forEach(function(b) {
+      var on = (b === btn);
+      b.classList.toggle('selected', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    feedbackNote.textContent = '';
+  });
+});
+shareBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() { shareResult(btn); });
+});
+</script>
+
+</body>
+</html>
