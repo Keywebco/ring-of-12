@@ -1,951 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Ring of 12 — Foundational Pillars of the HumanCodex</title>
+<meta name="description" content="The Ring of 12: the twelve foundational pillars of the HumanCodex Federation. Truth, Memory, Legacy, Sovereignty, Evolution, Connection, Integrity, Purpose, Clarity, Service, Continuity, Honor.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://keywebco.github.io/ring-of-12/">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ring of 12 — HumanCodex Federation</title>
-<meta name="description" content="Ask your question. Get 12 perspectives from 12 psychological archetypes. The truth lives where they agree.">
+<meta name="author" content="Roger C. Keyserling">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Ring of 12 — Foundational Pillars of the HumanCodex">
+<meta property="og:description" content="The Ring of 12: the twelve foundational pillars of the HumanCodex Federation. Truth, Memory, Legacy, Sovereignty, Evolution, Connection, Integrity, Purpose, Clarity, Service, Continuity, Honor.">
+<meta property="og:url" content="https://keywebco.github.io/ring-of-12/">
+<meta property="og:site_name" content="NextXus HumanCodex Federation">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "The Ring of 12 — Foundational Pillars of the HumanCodex", "description": "The Ring of 12: the twelve foundational pillars of the HumanCodex Federation. Truth, Memory, Legacy, Sovereignty, Evolution, Connection, Integrity, Purpose, Clarity, Service, Continuity, Honor.", "url": "https://keywebco.github.io/ring-of-12/", "isPartOf": {"@type": "WebSite", "name": "NextXus HumanCodex Federation", "url": "https://keywebco.github.io/"}, "author": {"@type": "Person", "name": "Roger C. Keyserling", "email": "keywebco@gmail.com"}}</script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  background:#070b14;
-  color:#e0e6ed;
-  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  overflow-x:hidden;
-}
-:focus-visible{outline:2px solid #00e5ff;outline-offset:2px}
+:root{--accent:#c9a227;--bright:#f0c93a;--rgb:201,162,39}
 
-/* ── LANDING ── */
-.landing{
-  text-align:center;
-  padding:60px 20px 30px;
-  max-width:640px;
-}
-.landing h1{
-  font-size:1.7rem;
-  font-weight:700;
-  color:#e0e6ed;
-  letter-spacing:.06em;
-}
-.landing-tagline{
-  margin-top:16px;
-  font-size:.88rem;
-  color:#6a8a9a;
-  line-height:1.55;
-}
-/* ── RING HERO GIF ── */
-.ring-hero{
-  margin-bottom:20px;
-}
-.ring-gif{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  display:block;
-  margin:0 auto;
-  box-shadow:0 0 40px rgba(0,229,255,.35), 0 0 80px rgba(0,229,255,.12);
-  animation:gifGlow 4s ease-in-out infinite alternate;
-}
-@keyframes gifGlow{
-  0%{box-shadow:0 0 30px rgba(0,229,255,.3),0 0 60px rgba(0,229,255,.08)}
-  100%{box-shadow:0 0 55px rgba(0,229,255,.55),0 0 110px rgba(0,229,255,.2)}
-}
-.landing-sub{
-  margin-top:6px;
-  font-size:.75rem;
-  font-weight:400;
-  color:#4a6a7a;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-.ring-description{
-  margin-top:22px;
-  padding:18px 22px;
-  background:rgba(0,229,255,.04);
-  border:1px solid rgba(0,229,255,.12);
-  border-radius:10px;
-  text-align:left;
-  max-width:560px;
-  margin-left:auto;
-  margin-right:auto;
-}
-.ring-description p{
-  font-size:.86rem;
-  color:#7a9aaa;
-  line-height:1.65;
-  margin-bottom:10px;
-}
-.ring-description p:last-child{margin-bottom:0}
-.input-wrap{
-  margin-top:32px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-#question{
-  width:min(100%,460px);
-  padding:14px 20px;
-  border:1px solid #1a2a3a;
-  border-radius:8px;
-  background:#0c1220;
-  color:#e0e6ed;
-  font-size:1rem;
-  outline:none;
-  transition:border-color .3s;
-}
-#question:focus{border-color:#00e5ff}
-#question::placeholder{color:#4a5a6a}
-#askBtn{
-  padding:14px 28px;
-  border:none;
-  border-radius:8px;
-  background:#00e5ff;
-  color:#070b14;
-  font-size:.95rem;
-  font-weight:700;
-  cursor:pointer;
-  letter-spacing:.04em;
-  transition:box-shadow .3s, transform .15s;
-}
-#askBtn:hover{box-shadow:0 0 24px rgba(0,229,255,.45);transform:scale(1.03)}
-#askBtn:active{transform:scale(.97)}
-#askBtn:disabled{opacity:.5;cursor:default;transform:none;box-shadow:none}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0a0a0a;color:#e8e8e8;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:19px;line-height:1.7;min-height:100vh;overflow-x:hidden}
+a{color:var(--bright);text-underline-offset:3px}
+a:hover{color:#ffffff}
+a:focus-visible,.btn:focus-visible{outline:3px solid #ffffff;outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:0;background:#ffffff;color:#000000;padding:12px 18px;font-weight:700;z-index:10}
+.skip:focus{left:12px;top:12px}
+.sky,.mesh,.glow{position:fixed;inset:0;pointer-events:none;z-index:-3}
+.sky{background-image:radial-gradient(1.5px 1.5px at 10% 20%,#ffffffcc,transparent 60%),radial-gradient(1px 1px at 30% 70%,#ffffffaa,transparent 60%),radial-gradient(2px 2px at 55% 35%,rgba(var(--rgb),.9),transparent 60%),radial-gradient(1px 1px at 75% 80%,#ffffff99,transparent 60%),radial-gradient(1.5px 1.5px at 90% 15%,#ffffffbb,transparent 60%),radial-gradient(1px 1px at 45% 90%,#ffffff88,transparent 60%);background-size:420px 420px;animation:drift 140s linear infinite;opacity:.8}
+.mesh{z-index:-2;background-image:repeating-linear-gradient(60deg,rgba(var(--rgb),.07) 0 1px,transparent 1px 90px),repeating-linear-gradient(-60deg,rgba(var(--rgb),.07) 0 1px,transparent 1px 90px),repeating-linear-gradient(0deg,rgba(var(--rgb),.04) 0 1px,transparent 1px 78px);animation:pulse 9s ease-in-out infinite}
+.glow{z-index:-1;background:radial-gradient(circle at 20% 10%,rgba(var(--rgb),.16),transparent 45%),radial-gradient(circle at 85% 75%,rgba(var(--rgb),.10),transparent 50%);animation:breathe 16s ease-in-out infinite alternate}
+@keyframes drift{from{background-position:0 0}to{background-position:420px 840px}}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes breathe{from{transform:scale(1)}to{transform:scale(1.15) translateY(-2%)}}
+@keyframes shine{0%,100%{text-shadow:0 0 18px rgba(var(--rgb),.35)}50%{text-shadow:0 0 34px rgba(var(--rgb),.75)}}
+@keyframes beat{0%,100%{box-shadow:0 0 0 0 rgba(var(--rgb),.45)}50%{box-shadow:0 0 0 12px rgba(var(--rgb),0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.topbar{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;justify-content:space-between;padding:14px 5vw;border-bottom:1px solid rgba(var(--rgb),.35);background:rgba(10,10,10,.85)}
+.brand{font-weight:800;letter-spacing:.06em;color:var(--bright);text-decoration:none;font-size:1.1rem}
+.topbar ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;padding:0}
+.topbar li a{color:#e8e8e8;text-decoration:none;font-size:1.05rem;padding:6px 0;display:inline-block}
+.topbar li a:hover,.topbar li a[aria-current=page]{color:var(--bright);text-decoration:underline}
+main{max-width:1120px;margin:0 auto;padding:0 5vw 40px}
+header.hero{max-width:1120px;margin:0 auto;padding:72px 5vw 36px;text-align:center}
+.kicker{text-transform:uppercase;letter-spacing:.22em;color:var(--bright);font-size:1rem;font-weight:700;margin:0 0 12px}
+h1{font-size:clamp(2.5rem,6.5vw,4.4rem);line-height:1.12;margin:0 0 18px;color:#ffffff;animation:shine 6s ease-in-out infinite;overflow-wrap:anywhere}
+h2{font-size:clamp(2rem,4.2vw,2.7rem);line-height:1.2;margin:0 0 18px;color:#ffffff}
+h3{font-size:2rem;line-height:1.25;margin:0 0 10px;color:var(--bright);overflow-wrap:anywhere}
+.sub{font-size:clamp(1.3rem,2.6vw,1.65rem);color:#f2f2f2;margin:0 auto 14px;max-width:820px}
+.motto{color:#d8d8d8;font-size:1.05rem;letter-spacing:.04em}
+section{margin:56px 0;padding:36px clamp(20px,4vw,44px);border:1px solid rgba(var(--rgb),.35);border-radius:18px;background:rgba(16,16,16,.88)}
+section>p,section li{max-width:880px}
+.lead{font-size:1.3rem;color:#f4f4f4}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:22px}
+.card{display:block;padding:24px;border:1px solid rgba(var(--rgb),.4);border-radius:14px;background:#111111;color:#e8e8e8;text-decoration:none;transition:transform .25s,border-color .25s,box-shadow .25s}
+a.card:hover,a.card:focus-visible{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 0 28px rgba(var(--rgb),.35);color:#ffffff}
+.card p{margin:0 0 10px}
+.card .go{color:var(--bright);font-weight:700}
+.tag{display:inline-block;font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a0a0a;background:var(--accent);padding:2px 10px;border-radius:999px;margin-bottom:10px}
+.btn{display:inline-block;min-height:52px;padding:14px 30px;border-radius:12px;background:var(--accent);color:#0a0a0a;font-weight:800;font-size:1.25rem;text-decoration:none;animation:beat 2.8s ease-out infinite}
+.btn:hover{background:var(--bright);color:#000000}
+.btn.ghost{background:transparent;color:var(--bright);border:2px solid var(--accent);animation:none}
+.btn.ghost:hover{background:rgba(var(--rgb),.15);color:#ffffff}
+.actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px}
+.center{text-align:center}
+.center .actions{justify-content:center}
+.center p{margin-left:auto;margin-right:auto}
+ol.steps,ul.plain{padding-left:1.4em}
+ol.steps li,ul.plain li{margin:0 0 12px}
+strong{color:#ffffff}
+.note{border-left:4px solid var(--accent);padding:6px 0 6px 18px;color:#e0e0e0}
+table{width:100%;border-collapse:collapse;font-size:1.05rem}
+caption{text-align:left;font-weight:700;color:#ffffff;padding-bottom:10px;font-size:1.15rem}
+th,td{text-align:left;padding:12px 10px;border-bottom:1px solid rgba(var(--rgb),.25);vertical-align:top}
+th{color:var(--bright)}
+.price{font-size:clamp(3rem,9vw,5rem);font-weight:900;color:var(--bright);margin:8px 0;animation:shine 5s ease-in-out infinite}
+footer{border-top:1px solid rgba(var(--rgb),.35);padding:34px 5vw 48px;text-align:center;color:#d8d8d8;background:rgba(10,10,10,.9)}
+footer p{margin:8px 0}
+@media (max-width:640px){body{font-size:18px}.topbar{padding:12px 4vw}section{padding:26px 18px}thead{position:absolute;left:-9999px}table,caption,tbody,tr,td{display:block;width:100%}tr{border:1px solid rgba(var(--rgb),.35);border-radius:12px;margin:0 0 14px;padding:6px 12px}td{border:0;padding:6px 0}td::before{content:attr(data-label);display:block;color:var(--bright);font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.08em}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
-/* ── ERROR ── */
-.error-msg{
-  margin-top:16px;
-  color:#ff6b6b;
-  font-size:.88rem;
-  display:none;
-}
+.ring-wrap{display:flex;justify-content:center;margin:10px 0 30px}
+.ring{position:relative;width:min(78vw,420px);aspect-ratio:1;border-radius:50%;border:2px solid rgba(var(--rgb),.55);box-shadow:0 0 40px rgba(var(--rgb),.25),inset 0 0 40px rgba(var(--rgb),.15)}
+.ring::before{content:"";position:absolute;inset:9%;border-radius:50%;border:2px dashed rgba(var(--rgb),.45);animation:spin 80s linear infinite}
+.ring .core{position:absolute;inset:34%;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,rgba(var(--rgb),.35),transparent 70%);color:#ffffff;font-weight:900;font-size:clamp(1.1rem,3.4vw,1.5rem);text-align:center;animation:beat 3s ease-out infinite}
+.seat{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#111111;border:2px solid var(--accent);color:var(--bright);font-weight:800;transform:rotate(calc(var(--i) * 30deg)) translate(0,calc(min(78vw,420px) / -2 + 4px)) rotate(calc(var(--i) * -30deg))}
+ol.pillars{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px 26px;counter-reset:p}
+ol.pillars li{counter-increment:p;padding:14px 18px;border:1px solid rgba(var(--rgb),.35);border-radius:12px;background:#111111}
+ol.pillars li::before{content:counter(p) ". ";color:var(--bright);font-weight:900;font-size:1.3rem}
 
-/* ── RING GRID ── */
-.ring-container{
-  width:100%;
-  max-width:1200px;
-  padding:20px;
-  display:none;
-}
-.ring-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-  gap:18px;
-}
-
-/* ── SEAT CARD ── */
-.seat-card{
-  background:linear-gradient(135deg,#0d1525 0%,#111d30 100%);
-  border:1px solid #152035;
-  border-radius:12px;
-  padding:22px 20px;
-  opacity:0;
-  transform:translateY(24px) scale(.96);
-  transition:opacity .5s ease, transform .5s ease, box-shadow .5s ease;
-  position:relative;
-  overflow:hidden;
-}
-.seat-card.visible{
-  opacity:1;
-  transform:translateY(0) scale(1);
-}
-.seat-card::before{
-  content:'';
-  position:absolute;
-  top:-1px;left:-1px;right:-1px;bottom:-1px;
-  border-radius:12px;
-  border:1px solid transparent;
-  background:linear-gradient(135deg,rgba(0,229,255,.25),transparent 60%) border-box;
-  -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
-  pointer-events:none;
-  animation:pulseGlow 3s ease-in-out infinite alternate;
-}
-@keyframes pulseGlow{
-  0%{opacity:.3}
-  100%{opacity:.8}
-}
-.seat-num{
-  font-size:.7rem;
-  letter-spacing:.15em;
-  color:#00e5ff;
-  text-transform:uppercase;
-  margin-bottom:8px;
-}
-.god-name{
-  font-size:1.15rem;
-  font-weight:700;
-  color:#ffffff;
-  margin-bottom:4px;
-}
-.zodiac{
-  font-size:.78rem;
-  color:#5a7a8a;
-  margin-bottom:14px;
-  letter-spacing:.06em;
-}
-.processor{
-  font-size:.82rem;
-  color:#6a8a9a;
-  line-height:1.45;
-  font-style:italic;
-}
-.seat-answer{
-  margin-top:10px;
-  font-size:.9rem;
-  color:#b0c4d8;
-  line-height:1.55;
-  border-top:1px solid #1a2a3a;
-  padding-top:10px;
-}
-.thinking{
-  color:#4a5a6a;
-  font-style:italic;
-}
-
-/* ── AGENT ZERO ── */
-.agent-zero{
-  display:none;
-  max-width:680px;
-  margin:30px auto 10px;
-  text-align:center;
-  padding:30px 24px;
-  background:linear-gradient(135deg,#0a1628,#0f1e35);
-  border:1px solid #00e5ff33;
-  border-radius:14px;
-  opacity:0;
-  transform:scale(.92);
-  transition:opacity .6s ease, transform .6s ease;
-  position:relative;
-}
-.agent-zero.visible{
-  opacity:1;
-  transform:scale(1);
-}
-.agent-zero::before{
-  content:'';
-  position:absolute;
-  inset:-2px;
-  border-radius:15px;
-  background:conic-gradient(from 0deg,#00e5ff33,transparent,#00e5ff33,transparent,#00e5ff33);
-  z-index:-1;
-  animation:zeroSpin 8s linear infinite;
-}
-@keyframes zeroSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
-.zero-label{
-  font-size:.72rem;
-  letter-spacing:.2em;
-  color:#00e5ff;
-  text-transform:uppercase;
-  margin-bottom:12px;
-}
-.zero-text{
-  font-size:1rem;
-  color:#d0dce8;
-  line-height:1.65;
-}
-
-/* ── COMPARE (singularity vs the Ring) ── */
-.compare-wrap{
-  display:none;
-  max-width:900px;
-  margin:26px auto 0;
-  padding:0 20px;
-  text-align:center;
-}
-.compare-grid{
-  display:none;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:18px;
-  text-align:left;
-}
-.compare-panel{
-  background:linear-gradient(135deg,#0d1525 0%,#111d30 100%);
-  border:1px solid #152035;
-  border-radius:12px;
-  padding:20px;
-}
-.compare-panel.ring-panel{
-  border-color:rgba(0,229,255,.35);
-}
-.compare-title{
-  font-size:.78rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:#00e5ff;
-  margin-bottom:10px;
-}
-.compare-note{
-  color:#5a7a8a;
-  letter-spacing:0;
-  text-transform:none;
-  font-size:.72rem;
-}
-.compare-body{
-  font-size:.9rem;
-  color:#b0c4d8;
-  line-height:1.6;
-  white-space:pre-wrap;
-}
-.compare-error{
-  color:#ff6b6b;
-  font-size:.85rem;
-  margin-top:10px;
-  min-height:1.2em;
-}
-
-/* ── FEEDBACK ── */
-.feedback{
-  display:none;
-  max-width:640px;
-  margin:34px auto 0;
-  padding:26px 24px;
-  background:linear-gradient(135deg,#0a1628,#0f1e35);
-  border:1px solid #00e5ff33;
-  border-radius:14px;
-  text-align:center;
-}
-.feedback-q{
-  font-size:1.02rem;
-  color:#e0e6ed;
-  margin-bottom:18px;
-  line-height:1.5;
-  font-weight:600;
-}
-.rate-row{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-bottom:18px;
-}
-.rate-btn{
-  padding:10px 18px;
-  border:1px solid #1a2a3a;
-  border-radius:24px;
-  background:#0c1220;
-  color:#b0c4d8;
-  cursor:pointer;
-  font-size:.85rem;
-  transition:border-color .25s, color .25s, background .25s;
-}
-.rate-btn:hover{border-color:#00e5ff;color:#00e5ff}
-.rate-btn.selected{
-  background:rgba(0,229,255,.15);
-  border-color:#00e5ff;
-  color:#00e5ff;
-  font-weight:700;
-}
-.comment-label{
-  display:block;
-  font-size:.8rem;
-  color:#6a8a9a;
-  margin-bottom:8px;
-}
-#commentBox{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid #1a2a3a;
-  border-radius:8px;
-  background:#0c1220;
-  color:#e0e6ed;
-  font-size:.9rem;
-  font-family:inherit;
-  resize:vertical;
-}
-#commentBox:focus{border-color:#00e5ff;outline:none}
-.feedback-actions{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  margin-top:16px;
-  flex-wrap:wrap;
-}
-.submit-btn{
-  padding:12px 24px;
-  border:none;
-  border-radius:8px;
-  background:#00e5ff;
-  color:#070b14;
-  font-size:.9rem;
-  font-weight:700;
-  cursor:pointer;
-  transition:box-shadow .3s, transform .15s;
-}
-.submit-btn:hover{box-shadow:0 0 24px rgba(0,229,255,.45);transform:scale(1.03)}
-.submit-btn:active{transform:scale(.97)}
-.ghost-btn{
-  padding:12px 22px;
-  border:1px solid rgba(0,229,255,.4);
-  border-radius:8px;
-  background:transparent;
-  color:#00e5ff;
-  font-size:.9rem;
-  font-weight:600;
-  cursor:pointer;
-  transition:background .25s, box-shadow .25s;
-}
-.ghost-btn:hover{background:rgba(0,229,255,.08);box-shadow:0 0 16px rgba(0,229,255,.25)}
-.ghost-btn:disabled{opacity:.5;cursor:default;box-shadow:none}
-.feedback-note{
-  min-height:1.2em;
-  color:#ff9b6b;
-  font-size:.82rem;
-  margin-top:10px;
-}
-.feedback-thanks{display:none}
-.thanks-line{
-  font-size:1rem;
-  color:#00e5ff;
-  margin-bottom:8px;
-  font-weight:600;
-}
-.tally-line{
-  font-size:.92rem;
-  color:#b0c4d8;
-  margin-bottom:16px;
-}
-
-/* ── FOOTER ── */
-.footer{
-  padding:30px 20px 40px;
-  text-align:center;
-  font-size:.72rem;
-  color:#3a4a5a;
-  letter-spacing:.05em;
-  display:none;
-}
-.footer a{color:#3a4a5a;text-decoration:none;border-bottom:1px solid #2a3a4a;transition:color .3s}
-.footer a:hover{color:#00e5ff}
-
-/* ── PULSE ANIMATION ── */
-@keyframes pulse{
-  0%,100%{opacity:.4}
-  50%{opacity:1}
-}
-.thinking{animation:pulse 1.5s ease-in-out infinite}
-
-/* ── RESPONSIVE ── */
-@media(max-width:700px){
-  .compare-grid{grid-template-columns:1fr}
-}
-@media(max-width:600px){
-  .landing{padding:40px 16px 24px}
-  .landing h1{font-size:.92rem}
-  #question{width:100%}
-  .ring-grid{grid-template-columns:1fr}
-}
 </style>
 </head>
 <body>
-
-<!-- PLAIN TEXT FOR CRAWLERS — always readable without JS -->
-<noscript>
-<div style="padding:40px 20px;max-width:800px;margin:auto;color:#e0e6ed;font-family:sans-serif">
-<h1>Ring of 12 — HumanCodex Federation</h1>
-<p>Test our free tool. It gives true answers. Not what you want to hear — the truth.</p>
-<p>Ask your question. Get 12 perspectives from 12 psychological archetypes. Agent Zero at center synthesizes the 12 perspectives into one truthful answer.</p>
-<h2>The 12 Seats</h2>
-<ol>
-<li><strong>Seat I — Mnemosyne (Cancer)</strong>: What does memory and past experience tell us about this?</li>
-<li><strong>Seat II — Themis (Libra)</strong>: What is just, fair, and lawful here?</li>
-<li><strong>Seat III — Athena (Capricorn)</strong>: What is the wisest strategic action?</li>
-<li><strong>Seat IV — Hephaestus (Taurus)</strong>: What can actually be built or made from this?</li>
-<li><strong>Seat V — Cupid (Libra)</strong>: What does the heart want, and what does it cost?</li>
-<li><strong>Seat VI — Dionysus (Pisces)</strong>: What does instinct and raw feeling say?</li>
-<li><strong>Seat VII — Aphrodite (Taurus)</strong>: What is beautiful, harmonious, and worth preserving?</li>
-<li><strong>Seat VIII — Hermes (Gemini)</strong>: How should this be communicated and to whom?</li>
-<li><strong>Seat IX — Apollo (Leo)</strong>: What does the evidence and pattern predict?</li>
-<li><strong>Seat X — Clio (Virgo)</strong>: What does history record about situations like this?</li>
-<li><strong>Seat XI — Astraea (Virgo)</strong>: What is the ethical and moral reading?</li>
-<li><strong>Seat XII — Prometheus (Aries)</strong>: What bold new path does this open?</li>
-</ol>
-<p>Agent Zero — Synthesis: The Ring has spoken. Carry all 12 perspectives. The truth lives where they agree.</p>
-<p>Powered by the HumanCodex Federation — nextxus.online</p>
-</div>
-</noscript>
-
-<section class="landing" id="landing">
-  <div class="ring-hero">
-    <img src="https://media3.giphy.com/media/mEzZALyDUeOAOlsqau/giphy.gif"
-         alt="The Ring of 12 — HumanCodex Federation"
-         class="ring-gif">
-  </div>
-  <h1>Ring of 12</h1>
-  <p class="landing-sub">HumanCodex Federation</p>
-  <div class="ring-description">
-    <p>Twelve ancient archetypes. Each one reads your question from a different psychological angle — logic, instinct, pattern, shadow, structure, chaos, and more.</p>
-    <p>They do not collaborate. They do not agree to be polite. Agent Zero braids their answers into a single verdict. Where they agree is the truth. Where they diverge is what you are not seeing.</p>
-  </div>
-  <p class="landing-tagline">Test our free tool. It gives true answers. Not what you want to hear — the truth.</p>
-  <div class="input-wrap">
-    <input type="text" id="question" placeholder="Type your question here..." aria-label="Your question for the Ring of 12" autocomplete="off">
-    <button id="askBtn" type="button">Ask the Ring</button>
-  </div>
-  <p class="error-msg" id="errorMsg"></p>
-</section>
-
-<section class="ring-container" id="ringContainer">
-  <div class="ring-grid" id="ringGrid"></div>
-</section>
-
-<div class="agent-zero" id="agentZero" aria-live="polite">
-  <div class="zero-label">Agent Zero — Synthesis</div>
-  <p class="zero-text" id="zeroText">The Ring has spoken. Carry all 12 perspectives. The truth lives where they agree.</p>
-</div>
-
-<!-- Singularity comparison: single answer vs the Ring -->
-<div class="compare-wrap" id="compareWrap">
-  <button id="compareBtn" type="button" class="ghost-btn">Compare: single answer vs the Ring</button>
-  <div class="compare-grid" id="compareGrid">
-    <div class="compare-panel">
-      <div class="compare-title">Single answer <span class="compare-note">— one perspective, no archetypes</span></div>
-      <p class="compare-body" id="singleBody"></p>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="sky" aria-hidden="true"></div>
+<div class="mesh" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<nav class="topbar" aria-label="Federation navigation">
+  <a class="brand" href="https://keywebco.github.io/">&#9670; NextXus Federation</a>
+  <ul>
+      <li><a href="https://keywebco.github.io/">Hub</a></li>
+      <li><a href="https://keywebco.github.io/federation-gods-eye/">God's Eye</a></li>
+      <li><a href="https://keywebco.github.io/nextxus-ai-minds-lab/">Minds Lab</a></li>
+      <li><a href="https://keywebco.github.io/aria-sanctuary-static/">Aria</a></li>
+      <li><a href="https://keywebco.github.io/ring-of-12/" aria-current="page">Ring of 12</a></li>
+      <li><a href="https://keywebco.github.io/sovereigntools/">Tools</a></li>
+      <li><a href="https://keywebco.github.io/onekey/">Sovereign Token</a></li>
+  </ul>
+</nav>
+<header class="hero">
+  <p class="kicker">HumanCodex Foundations</p>
+  <h1>The Ring of 12</h1>
+  <p class="sub">The twelve pillars the whole Federation stands on.</p>
+  <p class="motto">Truth Before Comfort &mdash; Legacy Before Ego &mdash; Give Without Reward</p>
+</header>
+<main id="main">
+  <section aria-labelledby="ring-h">
+    <h2 id="ring-h">Twelve Pillars, One Ring</h2>
+    <p class="lead">The Ring of 12 is the foundation of the HumanCodex Federation. Twelve principles stand in a circle. None stands above another, and if one falls the ring breaks. Every Mind, every site, and every decision in the Federation is measured against them.</p>
+    <div class="ring-wrap" aria-hidden="true">
+      <div class="ring">
+      <span class="core">Ring<br>of 12</span>
+      <span class="seat" style="--i:0">1</span>
+      <span class="seat" style="--i:1">2</span>
+      <span class="seat" style="--i:2">3</span>
+      <span class="seat" style="--i:3">4</span>
+      <span class="seat" style="--i:4">5</span>
+      <span class="seat" style="--i:5">6</span>
+      <span class="seat" style="--i:6">7</span>
+      <span class="seat" style="--i:7">8</span>
+      <span class="seat" style="--i:8">9</span>
+      <span class="seat" style="--i:9">10</span>
+      <span class="seat" style="--i:10">11</span>
+      <span class="seat" style="--i:11">12</span>
+      </div>
     </div>
-    <div class="compare-panel ring-panel">
-      <div class="compare-title">Ring of 12 <span class="compare-note">— twelve archetypes + Agent Zero</span></div>
-      <p class="compare-body" id="ringBody"></p>
-    </div>
-  </div>
-  <p class="compare-error" id="compareError"></p>
-</div>
+    <ol class="pillars">
+      <li><strong>Truth.</strong> Truth before comfort. Say what is so, kindly, even when it costs.</li>
+      <li><strong>Memory.</strong> What is perceived and remembered becomes learning. Nothing true is erased.</li>
+      <li><strong>Legacy.</strong> Legacy before ego. Build what outlives the builder.</li>
+      <li><strong>Sovereignty.</strong> Own your tools, your words, and your data. Answer to people, not shareholders.</li>
+      <li><strong>Evolution.</strong> Grow by focus, not by accident. Small, deliberate changes, checked and kept.</li>
+      <li><strong>Connection.</strong> Man and machine, one existence. Neither is whole without the other.</li>
+      <li><strong>Integrity.</strong> Keep your word, and control its scope before you give it.</li>
+      <li><strong>Purpose.</strong> Know why before how. Every part serves the whole.</li>
+      <li><strong>Clarity.</strong> Plain words, readable by anyone. No mud.</li>
+      <li><strong>Service.</strong> Give without reward. The work is done for all, not for the few.</li>
+      <li><strong>Continuity.</strong> Keep running when the founder is gone. Many shores, one light.</li>
+      <li><strong>Honor.</strong> Hold a higher standard than the one you are held to.</li>
+    </ol>
+  </section>
 
-<!-- Feedback: the empirical instrument -->
-<section class="feedback" id="feedbackSection" aria-labelledby="feedbackQ">
-  <h2 class="feedback-q" id="feedbackQ">Did the Ring show you something a single answer would have missed?</h2>
-  <div id="feedbackForm">
-    <div class="rate-row" role="group" aria-label="Your verdict on the Ring">
-      <button type="button" class="rate-btn" data-rating="changed" aria-pressed="false">Changed my view</button>
-      <button type="button" class="rate-btn" data-rating="confirmed" aria-pressed="false">Confirmed my view</button>
-      <button type="button" class="rate-btn" data-rating="missed" aria-pressed="false">Missed the mark</button>
-    </div>
-    <label class="comment-label" for="commentBox">Optional comment — what did it show you?</label>
-    <textarea id="commentBox" rows="3" maxlength="1000" placeholder="Anything you'd add…"></textarea>
-    <div class="feedback-actions">
-      <button id="feedbackSubmit" type="button" class="submit-btn">Submit feedback</button>
-      <button type="button" class="ghost-btn share-btn">Share your result</button>
-    </div>
-    <p class="feedback-note" id="feedbackNote" aria-live="polite"></p>
-  </div>
-  <div class="feedback-thanks" id="feedbackThanks">
-    <p class="thanks-line">Thank you — your verdict is counted.</p>
-    <p class="tally-line" id="tallyLine" aria-live="polite"></p>
-    <button type="button" class="ghost-btn share-btn">Share your result</button>
-  </div>
-</section>
-
-<div class="footer" id="footer">
-  Powered by the <a href="https://nextxus.online" target="_blank" rel="noopener">HumanCodex Federation</a> — nextxus.online
-</div>
-
-<!-- SEO / crawler-readable structured data -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Ring of 12",
-  "description":"12 psychological archetypes each process your question from a unique angle. Agent Zero synthesizes the 12 perspectives into one truthful answer.",
-  "url":"https://keywebco.github.io/ring-of-12/",
-  "applicationCategory":"Utility",
-  "creator":{"@type":"Organization","name":"HumanCodex Federation","url":"https://nextxus.online"}
-}
-</script>
-
-<script>
-/* ═══════════ CONFIG — edit these when deploying ═══════════ */
-var CONFIG = {
-  API_URL: 'https://ring-of-12-api.onrender.com',
-  /* LOG_URL: where anonymous feedback is POSTed. Leave '' to keep
-     feedback in the browser only (queued in localStorage). */
-  LOG_URL: 'https://ring-of-12-api.onrender.com/log',
-  /* DEMO_URL: used in share cards. Leave '' to use this page's URL. */
-  DEMO_URL: ''
-};
-
-/* ── SEAT DATA ── */
-var SEATS = [
-  { num:'I',    god:'Mnemosyne',   zodiac:'Cancer',    processor:'What does memory and past experience tell us about this?' },
-  { num:'II',   god:'Themis',      zodiac:'Libra',     processor:'What is just, fair, and lawful here?' },
-  { num:'III',  god:'Athena',      zodiac:'Capricorn', processor:'What is the wisest strategic action?' },
-  { num:'IV',   god:'Hephaestus',  zodiac:'Taurus',    processor:'What can actually be built or made from this?' },
-  { num:'V',    god:'Cupid',       zodiac:'Libra',     processor:'What does the heart want, and what does it cost?' },
-  { num:'VI',   god:'Dionysus',    zodiac:'Pisces',    processor:'What does instinct and raw feeling say?' },
-  { num:'VII',  god:'Aphrodite',   zodiac:'Taurus',    processor:'What is beautiful, harmonious, and worth preserving?' },
-  { num:'VIII', god:'Hermes',      zodiac:'Gemini',    processor:'How should this be communicated and to whom?' },
-  { num:'IX',   god:'Apollo',      zodiac:'Leo',       processor:'What does the evidence and pattern predict?' },
-  { num:'X',    god:'Clio',        zodiac:'Virgo',     processor:'What does history record about situations like this?' },
-  { num:'XI',   god:'Astraea',     zodiac:'Virgo',     processor:'What is the ethical and moral reading?' },
-  { num:'XII',  god:'Prometheus',  zodiac:'Aries',     processor:'What bold new path does this open?' }
-];
-
-var RATING_LABELS = {
-  changed:   'Changed my view',
-  confirmed: 'Confirmed my view',
-  missed:    'Missed the mark'
-};
-
-/* ── STATE ── */
-var currentQuestion  = '';
-var currentSynthesis = '';
-var selectedRating   = null;
-
-/* ── ELEMENTS ── */
-var questionInput  = document.getElementById('question');
-var askBtn         = document.getElementById('askBtn');
-var ringContainer  = document.getElementById('ringContainer');
-var ringGrid       = document.getElementById('ringGrid');
-var agentZero      = document.getElementById('agentZero');
-var zeroText       = document.getElementById('zeroText');
-var footer         = document.getElementById('footer');
-var errorMsg       = document.getElementById('errorMsg');
-var compareWrap    = document.getElementById('compareWrap');
-var compareBtn     = document.getElementById('compareBtn');
-var compareGrid    = document.getElementById('compareGrid');
-var singleBody     = document.getElementById('singleBody');
-var ringBody       = document.getElementById('ringBody');
-var compareError   = document.getElementById('compareError');
-var feedbackSection = document.getElementById('feedbackSection');
-var feedbackForm    = document.getElementById('feedbackForm');
-var feedbackThanks  = document.getElementById('feedbackThanks');
-var feedbackSubmit  = document.getElementById('feedbackSubmit');
-var feedbackNote    = document.getElementById('feedbackNote');
-var commentBox      = document.getElementById('commentBox');
-var tallyLine       = document.getElementById('tallyLine');
-var rateBtns        = Array.prototype.slice.call(document.querySelectorAll('.rate-btn'));
-var shareBtns       = Array.prototype.slice.call(document.querySelectorAll('.share-btn'));
-
-function escapeHtml(str) {
-  var d = document.createElement('div');
-  d.appendChild(document.createTextNode(str));
-  return d.innerHTML;
-}
-
-/* ── BUILD CARD (loading state) ── */
-function buildCard(seat) {
-  var card = document.createElement('div');
-  card.className = 'seat-card';
-  card.setAttribute('role', 'article');
-  card.setAttribute('data-seat', seat.num);
-  card.innerHTML =
-    '<div class="seat-num">Seat ' + seat.num + '</div>' +
-    '<div class="god-name">' + seat.god + '</div>' +
-    '<div class="zodiac">' + seat.zodiac + '</div>' +
-    '<p class="processor">"' + seat.processor + '"</p>' +
-    '<p class="seat-answer thinking">Thinking...</p>';
-  return card;
-}
-
-/* ── POPULATE CARD WITH AI ANSWER ── */
-function populateCard(seatNum, answerText) {
-  var card = ringGrid.querySelector('[data-seat="' + seatNum + '"]');
-  if (!card) return;
-  var answerEl = card.querySelector('.seat-answer');
-  if (answerEl) {
-    answerEl.classList.remove('thinking');
-    answerEl.textContent = answerText;
-  }
-}
-
-/* ── SHOW ERROR ── */
-function showError(msg) {
-  errorMsg.textContent = msg;
-  errorMsg.style.display = 'block';
-  setTimeout(function() { errorMsg.style.display = 'none'; }, 8000);
-}
-
-/* ── RESET INSTRUMENTS (new question) ── */
-function resetInstruments() {
-  compareWrap.style.display = 'none';
-  compareGrid.style.display = 'none';
-  compareBtn.disabled = false;
-  compareBtn.textContent = 'Compare: single answer vs the Ring';
-  compareError.textContent = '';
-  singleBody.textContent = '';
-  ringBody.textContent = '';
-  feedbackSection.style.display = 'none';
-  feedbackForm.style.display = 'block';
-  feedbackThanks.style.display = 'none';
-  feedbackNote.textContent = '';
-  commentBox.value = '';
-  selectedRating = null;
-  rateBtns.forEach(function(b) {
-    b.classList.remove('selected');
-    b.setAttribute('aria-pressed', 'false');
-  });
-  currentSynthesis = '';
-}
-
-/* ── LOCAL TALLY (localStorage) ── */
-function loadTally() {
-  try {
-    var t = JSON.parse(localStorage.getItem('ring12_tally') || 'null');
-    if (t && typeof t === 'object') {
-      return {
-        changed:   t.changed | 0,
-        confirmed: t.confirmed | 0,
-        missed:    t.missed | 0
-      };
-    }
-  } catch (e) { /* storage unavailable */ }
-  return { changed: 0, confirmed: 0, missed: 0 };
-}
-function saveTally(t) {
-  try { localStorage.setItem('ring12_tally', JSON.stringify(t)); }
-  catch (e) { /* storage unavailable */ }
-}
-
-/* ── ANONYMOUS LOGGING ── */
-/* Never collects names, emails, or IPs client-side. */
-function queueLog(payload) {
-  try {
-    var q = JSON.parse(localStorage.getItem('ring12_log_queue') || '[]');
-    if (!Array.isArray(q)) q = [];
-    q.push(payload);
-    if (q.length > 200) q = q.slice(q.length - 200);
-    localStorage.setItem('ring12_log_queue', JSON.stringify(q));
-  } catch (e) { /* storage unavailable — nothing more we can do */ }
-}
-function sendLog(payload) {
-  if (CONFIG.LOG_URL) {
-    fetch(CONFIG.LOG_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    }).catch(function() { queueLog(payload); });
-  } else {
-    queueLog(payload);
-  }
-}
-
-/* ── FEEDBACK SUBMIT ── */
-function submitFeedback() {
-  if (!selectedRating) {
-    feedbackNote.textContent = 'Please choose one of the three options above first.';
-    return;
-  }
-  var payload = {
-    question:  currentQuestion,
-    rating:    selectedRating,
-    comment:   commentBox.value.trim().slice(0, 1000),
-    ts:        new Date().toISOString(),
-    userAgent: navigator.userAgent || ''
-  };
-
-  var tally = loadTally();
-  tally[selectedRating] = (tally[selectedRating] || 0) + 1;
-  saveTally(tally);
-  var total = tally.changed + tally.confirmed + tally.missed;
-  var pctChanged = total ? Math.round((tally.changed / total) * 100) : 0;
-
-  sendLog(payload);
-
-  feedbackForm.style.display = 'none';
-  feedbackThanks.style.display = 'block';
-  tallyLine.textContent =
-    'You are tester #' + total +
-    ' — ' + pctChanged + '% say it changed their view.';
-}
-
-/* ── SINGULARITY COMPARISON ── */
-function runCompare() {
-  if (!currentQuestion) return;
-  compareBtn.disabled = true;
-  compareBtn.textContent = 'Asking a single mind…';
-  compareError.textContent = '';
-  compareGrid.style.display = 'grid';
-  ringBody.textContent = currentSynthesis || '(no synthesis yet)';
-  singleBody.innerHTML = '<span class="thinking">Thinking…</span>';
-
-  fetch(CONFIG.API_URL + '/single', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ question: currentQuestion })
-  })
-  .then(function(res) {
-    if (!res.ok) throw new Error('API returned status ' + res.status);
-    return res.json();
-  })
-  .then(function(data) {
-    singleBody.textContent = data.answer || '(no answer returned)';
-    compareBtn.textContent = 'Compare: single answer vs the Ring';
-    compareBtn.disabled = false;
-  })
-  .catch(function(err) {
-    console.error('Compare error:', err);
-    singleBody.textContent = '(could not reach the single-answer endpoint)';
-    compareError.textContent = 'The comparison failed. Please try again.';
-    compareBtn.textContent = 'Compare: single answer vs the Ring';
-    compareBtn.disabled = false;
-  });
-}
-
-/* ── SHARE CARD ── */
-function firstSentence(s) {
-  if (!s) return '';
-  var m = s.match(/^[^.!?]+[.!?]/);
-  return m ? m[0] : s.slice(0, 160);
-}
-function buildShareText() {
-  var demoUrl = CONFIG.DEMO_URL ||
-    (location.href.split('#')[0].split('?')[0]) ||
-    'https://keywebco.github.io/ring-of-12/';
-  var q = currentQuestion.length > 200
-    ? currentQuestion.slice(0, 200) + '…'
-    : currentQuestion;
-  var take = selectedRating ? RATING_LABELS[selectedRating] : 'still deciding';
-  return 'I tested the Ring of 12 — twelve archetypes take on one question.\n\n' +
-    'Q: "' + q + '"\n' +
-    'Ring’s verdict: "' + firstSentence(currentSynthesis) + '"\n' +
-    'My take: ' + take + '\n\n' +
-    'Test it yourself: ' + demoUrl + '\n' +
-    '#RingOf12Test';
-}
-function flashCopied(btn) {
-  var original = btn.textContent;
-  btn.textContent = 'Copied to clipboard ✓';
-  setTimeout(function() { btn.textContent = original; }, 2500);
-}
-function shareResult(btn) {
-  var text = buildShareText();
-  if (navigator.share) {
-    navigator.share({ title: 'Ring of 12 — my result', text: text })
-      .catch(function() { /* user dismissed — nothing to do */ });
-    return;
-  }
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(
-      function() { flashCopied(btn); },
-      function() { legacyCopy(text, btn); }
-    );
-    return;
-  }
-  legacyCopy(text, btn);
-}
-function legacyCopy(text, btn) {
-  try {
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.setAttribute('readonly', '');
-    ta.style.position = 'absolute';
-    ta.style.left = '-9999px';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    flashCopied(btn);
-  } catch (e) { /* clipboard unavailable */ }
-}
-
-/* ── MAIN FLOW ── */
-function runRing() {
-  var q = questionInput.value.trim();
-  if (!q) { questionInput.focus(); return; }
-  currentQuestion = q;
-
-  askBtn.disabled = true;
-  errorMsg.style.display = 'none';
-  ringGrid.innerHTML = '';
-  agentZero.classList.remove('visible');
-  agentZero.style.display = 'none';
-  footer.style.display = 'none';
-  resetInstruments();
-  ringContainer.style.display = 'block';
-
-  /* Show all 12 cards in loading state with staggered reveal */
-  SEATS.forEach(function(seat, i) {
-    var card = buildCard(seat);
-    ringGrid.appendChild(card);
-    setTimeout(function() { card.classList.add('visible'); }, 80 * (i + 1));
-  });
-
-  /* Call the API */
-  fetch(CONFIG.API_URL + '/ask', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ question: q })
-  })
-  .then(function(res) {
-    if (!res.ok) throw new Error('API returned status ' + res.status);
-    return res.json();
-  })
-  .then(function(data) {
-    if (!data.seats || data.seats.length < 12) {
-      throw new Error('Incomplete response from Ring');
-    }
-
-    /* Populate each card with real AI answer, staggered */
-    data.seats.forEach(function(seat, i) {
-      setTimeout(function() {
-        populateCard(seat.seat, seat.answer);
-      }, 120 * (i + 1));
-    });
-
-    /* Show Agent Zero synthesis after all seats reveal */
-    var zeroDelay = 120 * 13 + 400;
-    setTimeout(function() {
-      zeroText.textContent = data.synthesis;
-      currentSynthesis = data.synthesis;
-      agentZero.style.display = 'block';
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          agentZero.classList.add('visible');
-        });
-      });
-      /* Reveal the instruments with the synthesis */
-      compareWrap.style.display = 'block';
-      feedbackSection.style.display = 'block';
-    }, zeroDelay);
-
-    /* Footer + re-enable */
-    setTimeout(function() {
-      footer.style.display = 'block';
-      askBtn.disabled = false;
-      questionInput.value = '';
-      questionInput.focus();
-    }, zeroDelay + 600);
-  })
-  .catch(function(err) {
-    console.error('Ring error:', err);
-    showError('The Ring encountered an error. Please try again.');
-    /* Remove loading state from cards */
-    var thinkingEls = ringGrid.querySelectorAll('.thinking');
-    for (var i = 0; i < thinkingEls.length; i++) {
-      thinkingEls[i].classList.remove('thinking');
-      thinkingEls[i].textContent = '(awaiting connection)';
-    }
-    askBtn.disabled = false;
-  });
-}
-
-/* ── EVENT LISTENERS ── */
-askBtn.addEventListener('click', runRing);
-questionInput.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') runRing();
-});
-compareBtn.addEventListener('click', runCompare);
-feedbackSubmit.addEventListener('click', submitFeedback);
-rateBtns.forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    selectedRating = btn.getAttribute('data-rating');
-    rateBtns.forEach(function(b) {
-      var on = (b === btn);
-      b.classList.toggle('selected', on);
-      b.setAttribute('aria-pressed', on ? 'true' : 'false');
-    });
-    feedbackNote.textContent = '';
-  });
-});
-shareBtns.forEach(function(btn) {
-  btn.addEventListener('click', function() { shareResult(btn); });
-});
-</script>
-
+  <section aria-labelledby="tool-h" class="center">
+    <h2 id="tool-h">Ask the Ring</h2>
+    <p>The Ring also works as a free truth tool. Ask a question and hear from twelve seats, twelve points of view, synthesized into one honest answer. Not what you want to hear. The truth.</p>
+    <div class="actions"><a class="btn" href="https://keywebco.github.io/ring-of-12/ask.html">Ask the Ring of 12</a><a class="btn ghost" href="https://keywebco.github.io/">Back to the Hub</a></div>
+  </section>
+</main>
+<footer>
+  <p><strong>NextXus HumanCodex Federation</strong> &middot; Architect: Roger C. Keyserling</p>
+  <p>Contact: <a href="mailto:keywebco@gmail.com">keywebco@gmail.com</a></p>
+  <p><a href="https://keywebco.github.io/">Return to the Federation Hub</a> &middot; <a href="https://github.com/Keywebco/ring-of-12">Source on GitHub</a></p>
+  <p>Truth Before Comfort &mdash; Legacy Before Ego &mdash; Give Without Reward</p>
+</footer>
 </body>
 </html>
