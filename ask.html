@@ -38,23 +38,14 @@ body{
   color:#6a8a9a;
   line-height:1.55;
 }
-/* ── RING HERO GIF ── */
-.ring-hero{
-  margin-bottom:20px;
-}
-.ring-gif{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  display:block;
-  margin:0 auto;
-  box-shadow:0 0 40px rgba(0,229,255,.35), 0 0 80px rgba(0,229,255,.12);
-  animation:gifGlow 4s ease-in-out infinite alternate;
-}
-@keyframes gifGlow{
-  0%{box-shadow:0 0 30px rgba(0,229,255,.3),0 0 60px rgba(0,229,255,.08)}
-  100%{box-shadow:0 0 55px rgba(0,229,255,.55),0 0 110px rgba(0,229,255,.2)}
-}
+/* ── RING OF 12 ICONS ── */
+.ring12-icons{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:flex-end;margin:22px auto;max-width:780px}
+.ring12-icon{margin:0;text-align:center}
+.ring12-icon iframe{display:block;object-fit:cover;background:#111;border:0;border-radius:16px}
+.ring12-icon.main iframe{width:min(280px,70vw);height:min(280px,70vw);box-shadow:0 0 44px rgba(201,162,39,.35),0 0 90px rgba(201,162,39,.12)}
+.ring12-icon:not(.main) iframe{width:min(132px,32vw);height:min(132px,32vw);opacity:.94}
+.ring12-icon.solo iframe{width:min(180px,46vw);height:min(180px,46vw)}
+.ring12-icon figcaption{margin-top:8px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
 .landing-sub{
   margin-top:6px;
   font-size:.75rem;
@@ -509,9 +500,20 @@ body{
 
 <section class="landing" id="landing">
   <div class="ring-hero">
-    <img src="https://media3.giphy.com/media/mEzZALyDUeOAOlsqau/giphy.gif"
-         alt="The Ring of 12 — HumanCodex Federation"
-         class="ring-gif">
+    <div class="ring12-icons" role="img" aria-label="The same twelve aspects shown three ways: as Greek gods, as the zodiac, and in technical form">
+<figure class="ring12-icon main">
+<iframe src="https://www.youtube.com/embed/tgEEgO15QTo?autoplay=1&mute=1&loop=1&playlist=tgEEgO15QTo&controls=0&rel=0&modestbranding=1" title="The Ring of 12 as Greek gods" allow="autoplay; encrypted-media" loading="lazy" frameborder="0"></iframe>
+<figcaption>Greek gods</figcaption>
+</figure>
+<figure class="ring12-icon">
+<iframe src="https://www.youtube.com/embed/s908Frnino4?autoplay=1&mute=1&loop=1&playlist=s908Frnino4&controls=0&rel=0&modestbranding=1" title="The Ring of 12 as the zodiac" allow="autoplay; encrypted-media" loading="lazy" frameborder="0"></iframe>
+<figcaption>Zodiac</figcaption>
+</figure>
+<figure class="ring12-icon">
+<iframe src="https://www.youtube.com/embed/kdQPuCbQByc?autoplay=1&mute=1&loop=1&playlist=kdQPuCbQByc&controls=0&rel=0&modestbranding=1" title="The Ring of 12 in technical form" allow="autoplay; encrypted-media" loading="lazy" frameborder="0"></iframe>
+<figcaption>Technical</figcaption>
+</figure>
+</div>
   </div>
   <h1>Ring of 12</h1>
   <p class="landing-sub">HumanCodex Federation</p>
